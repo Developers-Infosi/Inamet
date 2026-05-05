@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clima Angola - 21 Províncias</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+
+    .popup {
+      text-align: center;
+      font-family: Arial;
+    }
+
+    .temp {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>🌍 Clima Atual em Angola</h2>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+const API_KEY = "SUA_API_KEY";
+
+// 🇦🇴 mapa Angola
+const map = L.map('map').setView([-11.2027, 17.8739], 6);
+
+// base mapa
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// 21 províncias
+const provinces = [
+  { name: "Luanda", lat: -8.83, lon: 13.23 },
+  { name: "Bengo", lat: -9.12, lon: 13.50 },
+  { name: "Benguela", lat: -12.58, lon: 13.40 },
+  { name: "Bié", lat: -12.38, lon: 16.93 },
+  { name: "Cabinda", lat: -5.56, lon: 12.19 },
+  { name: "Cuando", lat: -16.00, lon: 19.00 },
+  { name: "Cubango", lat: -16.50, lon: 18.50 },
+  { name: "Cuanza Norte", lat: -9.30, lon: 14.91 },
+  { name: "Cuanza Sul", lat: -10.72, lon: 15.24 },
+  { name: "Cunene", lat: -17.07, lon: 15.73 },
+  { name: "Huambo", lat: -12.77, lon: 15.73 },
+  { name: "Huíla", lat: -14.92, lon: 13.49 },
+  { name: "Icolo e Bengo", lat: -9.00, lon: 13.70 },
+  { name: "Luanda Norte", lat: -7.39, lon: 20.83 },
+  { name: "Luanda Sul", lat: -9.65, lon: 20.40 },
+  { name: "Malanje", lat: -9.54, lon: 16.34 },
+  { name: "Moxico", lat: -11.21, lon: 19.90 },
+  { name: "Moxico Leste", lat: -12.00, lon: 21.50 },
+  { name: "Namibe", lat: -15.19, lon: 12.15 },
+  { name: "Uíge", lat: -7.61, lon: 15.06 },
+  { name: "Zaire", lat: -6.13, lon: 12.37 }
+];
+
+// 🌦️ função clima
+async function loadWeather(p) {
+  const res = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?lat=${p.lat}&lon=${p.lon}&appid=${'0aea1068522467a30c4dbdc8912bf133'}&units=metric`
+  );
+
+  const data = await res.json();
+
+  const temp = data.main.temp;
+  const desc = data.weather[0].description;
+  const icon = data.weather[0].icon;
+
+  const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+  // marker
+  const marker = L.marker([p.lat, p.lon]).addTo(map);
+
+  marker.bindPopup(`
+    <div class="popup">
+      <h3>${p.name}</h3>
+      <img src="${iconUrl}" />
+      <div class="temp">${temp}°C</div>
+      <div>${desc}</div>
+    </div>
+  `);
+}
+
+// carregar tudo
+provinces.forEach(p => loadWeather(p));
+
+</script>
+
+</body>
+</html>
