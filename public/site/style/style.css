@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+.container-edited {
+    padding-block: 3rem;
+    padding-inline: 3rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.mb-5 {
+    margin-bottom: 2.5rem
+}
+.text-justify {
+    text-align:justify;
+}
+
+.text-primary {
+    color: #036ba1;
+}
+
+.font-size-25 {
+    font-size: 1.5625rem;
+}
+
+.text-organized {
+    line-height: 1.6;
+
+}
+
+@media (max-width: 768px) {
+    #contentTopFooter {
+        flex-direction: column;
+
+        .col {
+            width: 100%;
+        }
+    }
+
+}
+
+
+#contentTopFooter {
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding: 2.5rem;
+    gap: 3rem;
+
+    .col {
+        flex: 1 1 12.5rem;
+    }
+
+    div {
+        #logoWhite{
+            width: 100%;
+         
+            filter: brightness(0) invert(1);
+        }
+        p {
+            color: #fff;
+            margin-top: 2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        margin-top: 2rem;
+
+        h1{
+            color: #fff;
+            font-size: 1.40rem;
+            font-weight: 700;
+        }
+
+        ul {
+            margin-top: 2.5rem;
+            a {
+                color: #fff; 
+                font-weight: 100;
+                text-transform: uppercase;
+                font-size: 15px;
+                line-height: 1.5;
+                 transition: transform 0.3s ease, color 0.3s ease;
+                 display: inline-block;
+
+              
+
+            }
+
+            a:hover {
+                color:#db0084;
+                font-weight: 700;
+                transform: translateX(10px);
+                font-size: 14px;
+
+                
+            }
+
+            li {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+}
+
+
+#mainImgInamet{
+    display: flex;
+    justify-content: center;
+
+    img{
+
+        width: 18.75rem;
+        height: 18.75rem;
+    }
+    
+}
+
+
+#mainImgPrincipal{
+
+     display: flex;
+     justify-content: start;
+
+   
+    img{
+
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+        
+    }
+    
+
+}
+
+
+#principalSection{
+    h1{
+        font-size: 20px;
+    }
+}

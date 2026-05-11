@@ -1,0 +1,147 @@
+ <footer id="footer" role="contentinfo">
+                    <section id="footer_top">
+    <div class="container">
+
+        <div id="contentTopFooter">
+
+
+            <div class="col">
+                
+                <a href="{{ route("site.home") }}">
+                    <img id="logoWhite" src="/assets/images/logo/logo.png" title="Logotipo do Inamet">
+                </a>
+
+            </div>
+
+        
+
+  
+       <div class="col">
+        <h1>Sobre o Inamet</h1>
+        <ul>
+             <li><a href="{{  route("site.aboutInamet") }}"> <i class="fa fa-arrow-right"></i> Sobre o Inamet</a></li>
+              <li><a href=""> <i class="fa fa-arrow-right"></i> Director do Inamet</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Previsão Climática</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Monitoramento</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Tempo</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Avisos Metereológicos</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Satélites</a></li>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Previsão Sazonal</a></li>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Sismos</a></li>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Ondas</a></li>
+        </ul>
+       </div>
+
+
+        <div class="col">
+        <h1>Informações</h1>
+        <ul>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Publicações</a></li>
+              <li><a href=""> <i class="fa fa-arrow-right"></i> Notícias</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Projectos</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Galeria</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Video</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Contacto</a></li>
+        </ul>
+       </div>
+
+
+         <div class="col">
+        <h1>Links úteis</h1>
+        <ul>
+             <li><a href="https://governo.gov.ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Portal do Governo de Angola</a></li>
+              <li><a href="https://minttics.gov.ao/ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Minttics</a></li>
+               <li><a href="https://www.infosi.gov.ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Infosi</a></li>
+            <li><a href="https://angolahoje.ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Angola Hoje</a></li>
+          
+        </ul>
+       </div>
+
+             </div>
+
+
+        <div class="region region-footer">
+            <div id="block-mfweathercaption" class="block block-mf-weather-caption">
+                <div id="weather-caption">
+                    <!-- <button aria-label="Afficher la légende des prévisions" title="Afficher la légende des prévisions" type="button" v-on:click="displayModal()">Légende</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="block_rs">
+            <nav
+                role="navigation"
+                aria-labelledby="block-publicmenusocial-menu"
+                id="block-publicmenusocial"
+                class="block block-menu navigation menu--public---menu-reseaux-socia"
+            >
+                <span id="block-publicmenusocial-menu">Suivez-nous</span>
+
+                <ul class="menu">
+                    <li class="menu-icon-7 menu-item">
+                        <a
+                            href="{{ $configuration->facebook }}"
+                            class="fa fa-facebook-f-brands"
+                            target="_blank"
+                            title="{{ $configuration->facebook }}"
+                            >Facebook</a
+                        >
+                    </li>
+                    <li class="menu-icon-8 menu-item">
+                        <a
+                            href="{{ $configuration->twitter }}"
+                            class="fa fa-twitter-brands"
+                            target="_blank"
+                            title="{{ $configuration->twitter }}"
+                            >Twitter</a
+                        >
+                    </li>
+                    <li class="menu-icon-9 menu-item">
+                        <a
+                            href="{{ $configuration->linkedin }}"
+                            class="fa fa-linkedin-brands"
+                            target="_blank"
+                            title="{{ $configuration->linkedin }}"
+                            >Linkedin</a
+                        >
+                    </li>
+                    <li class="menu-icon-52 menu-item">
+                        <a
+                            href="{{ $configuration->instagram }}"
+                            class="fa fa-instagram-brands"
+                            target="_blank"
+                            title="{{ $configuration->instagram }}"
+                            >Instagram</a
+                        >
+                    </li>
+                   
+                   
+                </ul>
+            </nav>
+        </div>
+       
+    </div>
+</section>
+
+
+                  
+                    <section id="footer_bottom">
+                        <div class="container">
+                            <p>
+                                © {{ Date("Y") }} Copyright -
+                                <a href="{{ route("site.home") }}">INAMET</a>
+                            </p>
+                        </div>
+                    </section>
+                </footer>
+            </main>
+        </div>
+
+ 
+       <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/1","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"fr"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJx9kmGOhCAMhS_kTpO9UFOhIlmgBNCNc_oVnYzizM4ved97xVpLeuagFjTFAx3nzg9IOuP8DY8TJTXyql-dnfWUEuNAsySb4Qq2xOQcFxuwcNAUFMM7WJNKwionZG3LWk0Of602XOCDV-ueDM6icTBSIpMojhn-4UhTkZjES620ngyjpgXOYnPCIMlTsRIy5shqvYa3W987tcaJEXg8q_YU0dHCaas7FEaxmNmxWttrg4_JN6AmghQ7WLW_Fa6gJuqdg0jhBI2qXub6g7H2Da2sbrHFMfZO1A-0cnNFXF5_jPcS4KJvju5Ltvf982erWdaJrA1tYzjr3TfW1S3AkUnvfR6sn5LZu_2c21mbixKnCK-oTR1rdmU198tURk6oKNaZwiuqqbsEfq41XEF32j-dpkjudpDbFOLUO5tH1t12UmCc9OS-clmcDabLSy7soafMf_W1e14","theme":"public","theme_token":null},"ajaxTrustedUrl":[],"mf_poi_footer_pois":[{"title":"METEO PARIS","insee":"750560","lat":"48.859333","lng":"2.340591","path":"\/previsions-meteo-france\/paris\/75000","icon":"","code_postal":"75000","timezone":"Europe\/Paris","rank":1},{"title":"METEO TOULOUSE","insee":"315550","lat":"43.604098","lng":"1.441079","path":"\/previsions-meteo-france\/toulouse\/31000","icon":"","code_postal":"31000","timezone":"Europe\/Paris","rank":5},{"title":"METEO LYON","insee":"691230","lat":"45.758097","lng":"4.8407","path":"\/previsions-meteo-france\/lyon\/69000","icon":"","code_postal":"69000","timezone":"Europe\/Paris","rank":10},{"title":"METEO BORDEAUX","insee":"330630","lat":"44.837098","lng":"-0.580433","path":"\/previsions-meteo-france\/bordeaux\/33000","icon":"","code_postal":"33000","timezone":"Europe\/Paris","rank":15},{"title":"METEO NANTES","insee":"441090","lat":"47.2165","lng":"-1.554608","path":"\/previsions-meteo-france\/nantes\/44000","icon":"","code_postal":"44000","timezone":"Europe\/Paris","rank":20},{"title":"METEO MONTPELLIER","insee":"341720","lat":"43.610355","lng":"3.875467","path":"\/previsions-meteo-france\/montpellier\/34000","icon":"","code_postal":"34000","timezone":"Europe\/Paris","rank":25},{"title":"METEO RENNES","insee":"352380","lat":"48.113628","lng":"-1.681487","path":"\/previsions-meteo-france\/rennes\/35000","icon":"","code_postal":"35000","timezone":"Europe\/Paris","rank":30},{"title":"METEO MARSEILLE","insee":"130550","lat":"43.296199","lng":"5.375945","path":"\/previsions-meteo-france\/marseille\/13000","icon":"","code_postal":"13000","timezone":"Europe\/Paris","rank":35},{"title":"METEO LILLE","insee":"593500","lat":"50.631573","lng":"3.057161","path":"\/previsions-meteo-france\/lille\/59000","icon":"","code_postal":"59000","timezone":"Europe\/Paris","rank":40},{"title":"METEO ANGERS","insee":"490070","lat":"47.472707","lng":"-0.556177","path":"\/previsions-meteo-france\/angers\/49000","icon":"","code_postal":"49000","timezone":"Europe\/Paris","rank":45},{"title":"METEO GRENOBLE","insee":"381850","lat":"45.186503","lng":"5.725114","path":"\/previsions-meteo-france\/grenoble\/38000","icon":"","code_postal":"38000","timezone":"Europe\/Paris","rank":50},{"title":"METEO TOURS","insee":"372610","lat":"47.391812","lng":"0.687256","path":"\/previsions-meteo-france\/tours\/37000","icon":"","code_postal":"37000","timezone":"Europe\/Paris","rank":55},{"title":"METEO DIJON","insee":"212310","lat":"47.322479","lng":"5.041065","path":"\/previsions-meteo-france\/dijon\/21000","icon":"","code_postal":"21000","timezone":"Europe\/Paris","rank":60},{"title":"METEO LIMOGES","insee":"870850","lat":"45.833929","lng":"1.260532","path":"\/previsions-meteo-france\/limoges\/87000","icon":"","code_postal":"87000","timezone":"Europe\/Paris","rank":65},{"title":"METEO PAU","insee":"644450","lat":"43.300543","lng":"-0.370622","path":"\/previsions-meteo-france\/pau\/64000","icon":"","code_postal":"64000","timezone":"Europe\/Paris","rank":70},{"title":"METEO STRASBOURG","insee":"674820","lat":"48.583085","lng":"7.746694","path":"\/previsions-meteo-france\/strasbourg\/67000","icon":"","code_postal":"67000","timezone":"Europe\/Paris","rank":75},{"title":"METEO NANCY","insee":"543950","lat":"48.6919","lng":"6.183046","path":"\/previsions-meteo-france\/nancy\/54000","icon":"","code_postal":"54000","timezone":"Europe\/Paris","rank":80},{"title":"METEO BREST","insee":"290190","lat":"48.389778","lng":"-4.487512","path":"\/previsions-meteo-france\/brest\/29200","icon":"","code_postal":"29200","timezone":"Europe\/Paris","rank":85},{"title":"METEO BESANCON","insee":"250560","lat":"47.242262","lng":"6.020591","path":"\/previsions-meteo-france\/besancon\/25000","icon":"","code_postal":"25000","timezone":"Europe\/Paris","rank":90},{"title":"METEO LE MANS","insee":"721810","lat":"48.003684","lng":"0.196303","path":"\/previsions-meteo-france\/le-mans\/72000","icon":"","code_postal":"72000","timezone":"Europe\/Paris","rank":95}],"mf_ads_v2_id":"block-mf-ads-v2b2da60cd-b700-441d-a4c6-e5f96ea3c57e","mf_ads_v2_default":"mf-ads-v2","mf_ads_v2_provider":{"setting_name":"enabled_provider","setting_value":"google"},"mf_article_details":null,"mf_ads_v2_network_code":{"default":"21643048729,57108064","enable":1,"codes":"21643048729,57108064","urls":["\/meteo-plages"]},"mf_contenu_editorial_widget_items":[],"mf_video_sponso_admin_videos":[{"pid":"2","title":"\u00c0 quoi sert la m\u00e9t\u00e9o ?","id_youtube":"w7UhCa2BxVg","categories":{"Recommand\u00e9es":"Recommand\u00e9es"}},{"pid":"3","title":"Climadiag Agriculture et For\u00eat : s\u2019adapter au r\u00e9chauffement climatique","id_youtube":"PXxnqbWMVi4","categories":{"Recommand\u00e9es":"Recommand\u00e9es"}},{"pid":"4","title":"Quel climat en France en 2050 ?","id_youtube":"CtMSFXDx_b8","categories":{"R\u00e9cents":"R\u00e9cents"}},{"pid":"5","title":"Les pr\u00e9cipitations","id_youtube":"unJdAQwKuGQ","categories":{"Populaires":"Populaires"}},{"pid":"7","title":"5 fausses informations sur le climat","id_youtube":"Ue1hnAb8_1E","categories":{"Populaires":"Populaires"}},{"pid":"8","title":"Les tornades","id_youtube":"Bn45bcNXpRc","categories":{"Populaires":"Populaires"}},{"pid":"9","title":"Dans les coulisses des cartes de Vigilance de M\u00e9t\u00e9o-France","id_youtube":"rXstSg0Rikc","categories":{"R\u00e9cents":"R\u00e9cents"}},{"pid":"13","title":"Comment les pr\u00e9fets et les collectivit\u00e9s prot\u00e8gent la population","id_youtube":"UlTBMc8TObA","categories":{"R\u00e9cents":"R\u00e9cents"}},{"pid":"25","title":"Comment la Vigilance de M\u00e9t\u00e9o-France aide la S\u00e9curit\u00e9 civile \u00e0 anticiper les crises ?","id_youtube":"Hkf5A-6QVTY","categories":{"R\u00e9cents":"R\u00e9cents"}},{"pid":"28","title":"Chaleur en ville","id_youtube":"XmA_iVDh-QM","categories":{"Populaires":"Populaires"}},{"pid":"31","title":"De la pluie aux inondations : un ph\u00e9nom\u00e8ne devenu extr\u00eame","id_youtube":"47z0MlydbXc","categories":{"Recommand\u00e9es":"Recommand\u00e9es"}},{"pid":"32","title":"Comment pr\u00e9voit-on le temps ? ","id_youtube":"G04CAaMA-qM","categories":{"Recommand\u00e9es":"Recommand\u00e9es"}}],"mf_video_sponso_admin_categories":[{"pid":"1","title":"Recommand\u00e9es","icon":"fa fa-heart"},{"pid":"2","title":"R\u00e9cents","icon":"fa fa-clock"},{"pid":"3","title":"Populaires","icon":"fa fa-users"}],"mf_poi_selector_block_children_zone":[{"IDTechnique":"REGIN11","path":"\/previsions-meteo-france\/occitanie\/regin11","taxonomy":"REGION","name":"Occitanie"},{"IDTechnique":"REGIN01","path":"\/previsions-meteo-france\/hauts-de-france\/1","taxonomy":"REGION","name":"Hauts-de-France"},{"IDTechnique":"REGIN02","path":"\/previsions-meteo-france\/normandie\/2","taxonomy":"REGION","name":"Normandie"},{"IDTechnique":"REGIN03","path":"\/previsions-meteo-france\/ile-de-france\/3","taxonomy":"REGION","name":"\u00cele-de-France"},{"IDTechnique":"REGIN04","path":"\/previsions-meteo-france\/grand-est\/4","taxonomy":"REGION","name":"Grand Est"},{"IDTechnique":"REGIN05","path":"\/previsions-meteo-france\/bretagne\/5","taxonomy":"REGION","name":"Bretagne"},{"IDTechnique":"REGIN06","path":"\/previsions-meteo-france\/pays-de-la-loire\/6","taxonomy":"REGION","name":"Pays de la Loire"},{"IDTechnique":"REGIN07","path":"\/previsions-meteo-france\/centre-val-de-loire\/7","taxonomy":"REGION","name":"Centre-Val de Loire"},{"IDTechnique":"REGIN08","path":"\/previsions-meteo-france\/bourgogne-franche-comte\/8","taxonomy":"REGION","name":"Bourgogne-Franche-Comt\u00e9"},{"IDTechnique":"REGIN09","path":"\/previsions-meteo-france\/nouvelle-aquitaine\/9","taxonomy":"REGION","name":"Nouvelle Aquitaine"},{"IDTechnique":"REGIN10","path":"\/previsions-meteo-france\/auvergne-rhone-alpes\/10","taxonomy":"REGION","name":"Auvergne-Rh\u00f4ne-Alpes"},{"IDTechnique":"REGIN12","path":"\/previsions-meteo-france\/provence-alpes-cote-d-azur\/12","taxonomy":"REGION","name":"Provence-Alpes-C\u00f4te d\u0027Azur"},{"IDTechnique":"REGIN13","path":"\/previsions-meteo-france\/corse\/13","taxonomy":"REGION","name":"Corse"}],"mf_poi_selector_block_children_poi":[],"mf_poi_selector_block_type":"METROPOLE","mf_poi_selector_page":"PAYS","mf_map_layers_v2":{"nid":"1","name":"France","path":"\/meteo-france","taxonomy":"PAYS","path_assets":"METROPOLE","bbox":[{"lat":"39.693","lng":"-8.5964","lat_sin":0.6386738128601337,"lat_cos":0.7694775895155745,"lng_rad":-0.15003548381844053,"value":"39.693, -8.5964"},{"lat":"52.4586","lng":"13.015","lat_sin":0.7929132627241813,"lat_cos":0.6093345204369218,"lng_rad":0.22715460214706198,"value":"52.4586, 13.015"}],"field_id_technique":"PAYS007","parents":[{"type":"PAYS","title":"France"},{"type":"CONTINENT","title":"Europe"}]},"mf_map_layers_v2_children_poi":[{"title":"Ajaccio","lat":"41.925112","lng":"8.735601","path":"\/previsions-meteo-france\/ajaccio\/20000","insee":"200040","taxonomy":"VILLE_FRANCE","code_postal":"20000","timezone":"Europe\/Paris"},{"title":"Alen\u00e7on","lat":"48.428983","lng":"0.091053","path":"\/previsions-meteo-france\/alencon\/61000","insee":"610010","taxonomy":"VILLE_FRANCE","code_postal":"61000","timezone":"Europe\/Paris"},{"title":"Amiens","lat":"49.89149","lng":"2.297577","path":"\/previsions-meteo-france\/amiens\/80000","insee":"800210","taxonomy":"VILLE_FRANCE","code_postal":"80000","timezone":"Europe\/Paris"},{"title":"Aurillac","lat":"44.925048","lng":"2.439111","path":"\/previsions-meteo-france\/aurillac\/15000","insee":"150140","taxonomy":"VILLE_FRANCE","code_postal":"15000","timezone":"Europe\/Paris"},{"title":"Auxerre","lat":"47.79735","lng":"3.565884","path":"\/previsions-meteo-france\/auxerre\/89000","insee":"890240","taxonomy":"VILLE_FRANCE","code_postal":"89000","timezone":"Europe\/Paris"},{"title":"Belfort","lat":"47.640776","lng":"6.849168","path":"\/previsions-meteo-france\/belfort\/90000","insee":"900100","taxonomy":"VILLE_FRANCE","code_postal":"90000","timezone":"Europe\/Paris"},{"title":"Biarritz","lat":"43.48056","lng":"-1.55","path":"\/previsions-meteo-france\/biarritz\/64200","insee":"641220","taxonomy":"VILLE_FRANCE","code_postal":"64200","timezone":"Europe\/Paris"},{"title":"Bordeaux","lat":"44.837098","lng":"-0.580433","path":"\/previsions-meteo-france\/bordeaux\/33000","insee":"330630","taxonomy":"VILLE_FRANCE","code_postal":"33000","timezone":"Europe\/Paris"},{"title":"Bourg-Saint-Maurice","lat":"45.616508","lng":"6.768147","path":"\/previsions-meteo-france\/bourg-saint-maurice\/73700","insee":"730540","taxonomy":"VILLE_FRANCE","code_postal":"73700","timezone":"Europe\/Paris"},{"title":"Bourges","lat":"47.083316","lng":"2.394478","path":"\/previsions-meteo-france\/bourges\/18000","insee":"180330","taxonomy":"VILLE_FRANCE","code_postal":"18000","timezone":"Europe\/Paris"},{"title":"Brest","lat":"48.389778","lng":"-4.487512","path":"\/previsions-meteo-france\/brest\/29200","insee":"290190","taxonomy":"VILLE_FRANCE","code_postal":"29200","timezone":"Europe\/Paris"},{"title":"Chalon-sur-Sa\u00f4ne","lat":"46.793127","lng":"4.846777","path":"\/previsions-meteo-france\/chalon-sur-saone\/71100","insee":"710760","taxonomy":"VILLE_FRANCE","code_postal":"71100","timezone":"Europe\/Paris"},{"title":"Chaumont","lat":"48.110332","lng":"5.137971","path":"\/previsions-meteo-france\/chaumont\/52000","insee":"521210","taxonomy":"VILLE_FRANCE","code_postal":"52000","timezone":"Europe\/Paris"},{"title":"Cherbourg-Octeville","lat":"49.63838","lng":"-1.616008","path":"\/previsions-meteo-france\/cherbourg-octeville\/50100","insee":"501290","taxonomy":"VILLE_FRANCE","code_postal":"50100","timezone":"Europe\/Paris"},{"title":"Gap","lat":"44.558371","lng":"6.077558","path":"\/previsions-meteo-france\/gap\/05000","insee":"050610","taxonomy":"VILLE_FRANCE","code_postal":"05000","timezone":"Europe\/Paris"},{"title":"La Rochelle","lat":"46.158668","lng":"-1.151253","path":"\/previsions-meteo-france\/la-rochelle\/17000","insee":"173000","taxonomy":"VILLE_FRANCE","code_postal":"17000","timezone":"Europe\/Paris"},{"title":"Lille","lat":"50.631573","lng":"3.057161","path":"\/previsions-meteo-france\/lille\/59000","insee":"593500","taxonomy":"VILLE_FRANCE","code_postal":"59000","timezone":"Europe\/Paris"},{"title":"Limoges","lat":"45.833929","lng":"1.260532","path":"\/previsions-meteo-france\/limoges\/87000","insee":"870850","taxonomy":"VILLE_FRANCE","code_postal":"87000","timezone":"Europe\/Paris"},{"title":"Lyon","lat":"45.758097","lng":"4.8407","path":"\/previsions-meteo-france\/lyon\/69000","insee":"691230","taxonomy":"VILLE_FRANCE","code_postal":"69000","timezone":"Europe\/Paris"},{"title":"Marseille","lat":"43.296199","lng":"5.375945","path":"\/previsions-meteo-france\/marseille\/13000","insee":"130550","taxonomy":"VILLE_FRANCE","code_postal":"13000","timezone":"Europe\/Paris"},{"title":"Metz","lat":"49.119505","lng":"6.176565","path":"\/previsions-meteo-france\/metz\/57000","insee":"574630","taxonomy":"VILLE_FRANCE","code_postal":"57000","timezone":"Europe\/Paris"},{"title":"Mont\u00e9limar","lat":"44.557726","lng":"4.750725","path":"\/previsions-meteo-france\/montelimar\/26200","insee":"261980","taxonomy":"VILLE_FRANCE","code_postal":"26200","timezone":"Europe\/Paris"},{"title":"Montpellier","lat":"43.610355","lng":"3.875467","path":"\/previsions-meteo-france\/montpellier\/34000","insee":"341720","taxonomy":"VILLE_FRANCE","code_postal":"34000","timezone":"Europe\/Paris"},{"title":"Nantes","lat":"47.2165","lng":"-1.554608","path":"\/previsions-meteo-france\/nantes\/44000","insee":"441090","taxonomy":"VILLE_FRANCE","code_postal":"44000","timezone":"Europe\/Paris"},{"title":"Nice","lat":"43.701513","lng":"7.26712","path":"\/previsions-meteo-france\/nice\/06000","insee":"060880","taxonomy":"VILLE_FRANCE","code_postal":"06000","timezone":"Europe\/Paris"},{"title":"Paris","lat":48.859333,"lng":2.340591,"path":"\/previsions-meteo-france\/paris\/75000","insee":"751010","taxonomy":"VILLE_FRANCE","code_postal":"75000","timezone":"Europe\/Paris"},{"title":"Perpignan","lat":"42.697131","lng":"2.8942","path":"\/previsions-meteo-france\/perpignan\/66000","insee":"661360","taxonomy":"VILLE_FRANCE","code_postal":"66000","timezone":"Europe\/Paris"},{"title":"Reims","lat":"49.264376","lng":"4.027926","path":"\/previsions-meteo-france\/reims\/51100","insee":"514540","taxonomy":"VILLE_FRANCE","code_postal":"51100","timezone":"Europe\/Paris"},{"title":"Rennes","lat":"48.113628","lng":"-1.681487","path":"\/previsions-meteo-france\/rennes\/35000","insee":"352380","taxonomy":"VILLE_FRANCE","code_postal":"35000","timezone":"Europe\/Paris"},{"title":"Rouen","lat":"49.442428","lng":"1.102139","path":"\/previsions-meteo-france\/rouen\/76000","insee":"765400","taxonomy":"VILLE_FRANCE","code_postal":"76000","timezone":"Europe\/Paris"},{"title":"Strasbourg","lat":"48.583085","lng":"7.746694","path":"\/previsions-meteo-france\/strasbourg\/67000","insee":"674820","taxonomy":"VILLE_FRANCE","code_postal":"67000","timezone":"Europe\/Paris"},{"title":"Tarbes","lat":"43.232608","lng":"0.073956","path":"\/previsions-meteo-france\/tarbes\/65000","insee":"654400","taxonomy":"VILLE_FRANCE","code_postal":"65000","timezone":"Europe\/Paris"},{"title":"Toulouse","lat":"43.604098","lng":"1.441079","path":"\/previsions-meteo-france\/toulouse\/31000","insee":"315550","taxonomy":"VILLE_FRANCE","code_postal":"31000","timezone":"Europe\/Paris"},{"title":"Tours","lat":"47.391812","lng":"0.687256","path":"\/previsions-meteo-france\/tours\/37000","insee":"372610","taxonomy":"VILLE_FRANCE","code_postal":"37000","timezone":"Europe\/Paris"},{"title":"Vichy","lat":"46.126251","lng":"3.424781","path":"\/previsions-meteo-france\/vichy\/03200","insee":"033100","taxonomy":"VILLE_FRANCE","code_postal":"03200","timezone":"Europe\/Paris"}],"mf_map_layers_v2_sub_zone":{"REGIN11":{"path":"\/previsions-meteo-france\/occitanie\/regin11","name":"Occitanie"},"REGIN01":{"path":"\/previsions-meteo-france\/hauts-de-france\/1","name":"Hauts-de-France"},"REGIN02":{"path":"\/previsions-meteo-france\/normandie\/2","name":"Normandie"},"REGIN03":{"path":"\/previsions-meteo-france\/ile-de-france\/3","name":"\u00cele-de-France"},"REGIN04":{"path":"\/previsions-meteo-france\/grand-est\/4","name":"Grand Est"},"REGIN05":{"path":"\/previsions-meteo-france\/bretagne\/5","name":"Bretagne"},"REGIN06":{"path":"\/previsions-meteo-france\/pays-de-la-loire\/6","name":"Pays de la Loire"},"REGIN07":{"path":"\/previsions-meteo-france\/centre-val-de-loire\/7","name":"Centre-Val de Loire"},"REGIN08":{"path":"\/previsions-meteo-france\/bourgogne-franche-comte\/8","name":"Bourgogne-Franche-Comt\u00e9"},"REGIN09":{"path":"\/previsions-meteo-france\/nouvelle-aquitaine\/9","name":"Nouvelle Aquitaine"},"REGIN10":{"path":"\/previsions-meteo-france\/auvergne-rhone-alpes\/10","name":"Auvergne-Rh\u00f4ne-Alpes"},"REGIN12":{"path":"\/previsions-meteo-france\/provence-alpes-cote-d-azur\/12","name":"Provence-Alpes-C\u00f4te d\u0027Azur"},"REGIN13":{"path":"\/previsions-meteo-france\/corse\/13","name":"Corse"},"DEPT988":{"path":"\/previsions-meteo-france\/nouvelle-caledonie\/988","name":"Nouvelle Cal\u00e9donie"}},"mf_map_layers_v2_cperiod":0,"mf_map_layers_v2_section":"","mf_map_layers_v2_children_poi_observation":null,"mf_bulletin_tendance":{"zone":{"nid":"1","name":"France","path":"\/meteo-france","taxonomy":"PAYS","path_assets":"METROPOLE","bbox":[{"lat":"39.693","lng":"-8.5964","lat_sin":0.6386738128601337,"lat_cos":0.7694775895155745,"lng_rad":-0.15003548381844053,"value":"39.693, -8.5964"},{"lat":"52.4586","lng":"13.015","lat_sin":0.7929132627241813,"lat_cos":0.6093345204369218,"lng_rad":0.22715460214706198,"value":"52.4586, 13.015"}],"field_id_technique":"PAYS007","parents":[{"type":"PAYS","title":"France"},{"type":"CONTINENT","title":"Europe"}]},"poi":[],"canDisplay":true},"mf_site_details":{"title":""},"poi_title":[],"mf_vigilance_widget_poi":{"id":"PAYS007","name":"France","dpt":{"name":"France","cp":"PAYS007"}},"mf_vigilance_widget_type":"zone","mf_vigilance_widget_list_dpt":[],"mf_informations_speciales_settings":[{"setting_name":"max_notif","setting_value":"5"}],"mf_barre_fav_current_poi":null,"mf_custom_logo":{"setting_name":"logo","image":"\/sites\/default\/files\/logo\/LOGO_MF.png","title":"M\u00e9t\u00e9o-France \u00e0 vos c\u00f4t\u00e9s, dans un climat qui change","alt":"M\u00e9t\u00e9o-France \u00e0 vos c\u00f4t\u00e9s, dans un climat qui change","href":"https:\/\/meteofrance.com"},"advency_gtm":{"config":{"gtm_id":"GTM-KN7SN62"}},"mf_search_form":{"config_base_urls":{"metropole":"meteofrance.com","reunion":"meteofrance.com","guadeloupe":"meteofrance.com","martinique":"meteofrance.com","nc":"meteofrance.com","pf":"meteofrance.com","mayotte":"meteofrance.com"}},"mf_tools_common":{"alias":"\/meteo-france","config":{"base_url":"meteofrance.com\/internet2018client\/2.0","site":"rwg","domain":"https:\/\/rwg.meteofrance.com"}},"user":{"uid":0,"permissionsHash":"7936fac673bc5d2e3d3e9eabac7b0e75afe8fad0aec046b2623c2a8261cdae3f"}}</script>
+    <script src="/site/sites/default/files/js/js_8aHW8fiVwAqW1frMcQRb_9NAC_aK4cYKz89u60AqXBo3efb.js?scope=footer&amp;delta=0&amp;language=fr&amp;theme=public&amp;include=eJyFkmFuwyAMhS_UzdIuZDngUEuAEZBU6ekHSdQ2abX9Cu97zwm2Q3bmaBZ0NQA9z5cwItmC8w_sJ8rmyk2_OxsbKGfGkWbNUuAM1sTkPVeJWDlaiobhE-xJo7HJCdlKbdXk8SbWcYU_vF73YPAquiOBHKOlBV7F6sRRc6AqGguWxKZV8NrAZ6fXeHUK-7PrQAk9LZzXuqfCpIKFPZt2k2Nwn98B9ETUKqOY7atwBj1RuK8C-93gKLtbVX1pQwpBI5z0t6f7UuS-NTGLZW19tdeuzbzqzXfi-0bwymQ5w4ENU3ac_89t7JhLmqYE7-iYeq78zHruxlSvnNFQ6pOBd9RTd438-MXgDC5pGrwYcF4H8l-lLl6i-wWmyjf_"></script>
+
+    </body>
+
+    
+</html>
