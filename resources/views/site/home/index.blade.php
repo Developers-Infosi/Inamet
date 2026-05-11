@@ -7,7 +7,7 @@
 <div id="page">
 <div class="page_sections_container">
                          
-<div style="padding-block: 50px; color:#222;">
+<div class="container-edited" style="padding-block: 50px; color:#222;">
 
     @include('extra.map.map')
    

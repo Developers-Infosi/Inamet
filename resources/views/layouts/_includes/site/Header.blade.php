@@ -30,12 +30,13 @@
     <meta name="MobileOptimized" content="width" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link rel="preload" as="font" href="/site/modules/custom/mf_tools_common_theme_public/fonts/fae209.woff2?v=1.0.0" crossorigin="anonymous" type="font/woff2" />
     <link rel="preload" as="font" href="/site/modules/custom/mf_tools_common/fonts/Quicksand-Regular.woff2" crossorigin="anonymous" type="font/woff2" />
     <link rel="preload" as="font" href="/site/modules/custom/mf_tools_common/fonts/Roboto-Bold.woff2" crossorigin="anonymous" type="font/woff2" />
     <link rel="preload" as="font" href="/site/modules/custom/mf_tools_common/fonts/Roboto-Regular.woff2" crossorigin="anonymous" type="font/woff2" />
     <link rel="preload" as="font" href="/site/modules/custom/mf_tools_common/fonts/Quicksand-Bold.woff2" crossorigin="anonymous" type="font/woff2" />
-
+        <link rel="stylesheet" href="/site/style/style.css" />
    
     <link rel="stylesheet" media="all" href="/site/sites/default/files/css/css_zmaCf1MQyH1P_zHrj0MPxqBSTTqsiO7Xwjzh_EAZZAs2eb2.css?delta=0&amp;language=fr&amp;theme=public&amp;include=eJx9kutuwyAMhV-oq6W9kOWAk6ACRlxadU-_ONnakHb7Bec7x8YCwohkC14_IWw7ymbmRZ_C0dnYQDkzjnSV7AocwZpo3nN1EStHS9EwvIOaNBIX2ZCtq0s1ebw5O3GFfzytezDYi87BRJmmTGku8AdHalVSliBa6QJNjJbusBerE0fJgaqTWLAkNksbXru-d7TGyyTws6oOlNDTnfPvhXZAE1GqG53ZmsERaCKJw1GkcoZOqVdY3w11HOilutVVzzh4MRfopbpXZ1mW8Zdj1pn3evMn5_XJcGay2-lH1ueSpJbgFfWp51sfmeZuTHXmjIaS3gC8Ik19SeTH34IjOO0-gc0tkT8_ybnF1Abvysz2tO4MTF4G8h-l3r2L0zdatjvo" />
     <link rel="stylesheet" media="all" href="/site/sites/default/files/custom_css/menu-css/menu_icons_1775611065d5dc.html?td68b1" />

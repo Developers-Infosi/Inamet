@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="form-group">
         <label for="title">Titulo</label>
-        <input type="text" name="title" id="title" value="{{ isset($about->title) ? $about->title : '' }}"
+        <input type="text" name="title" id="title" value="{{ isset($aboutInamet->title) ? $aboutInamet->title : '' }}"
             class="form-control border-secondary" placeholder="Titulo" required>
     </div>
 </div> <!-- /.col -->
@@ -13,7 +13,7 @@
             <p>Digite o corpo do Sobre a Reunião</p>
             <!-- Create the editor container -->
             <textarea name="body" id="editor1" style="min-height:300px; min-width:100%">
-       {{ isset($about->body) ? $about->body : '' }}
+       {{ isset($aboutInamet->body) ? $aboutInamet->body : '' }}
         </textarea>
         </div>
     </div>

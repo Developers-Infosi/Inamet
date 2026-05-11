@@ -66,6 +66,111 @@
                         </a>
                     </li>
                 </ul>
+
+
+
+                 <ul class="navbar-nav flex-fill w-100 mb-2">
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="{{ route('admin.aboutInamet.show') }}" >
+                            <i class="fe fe-file fe-16"></i>
+                            <span class="ml-3 item-text"> Sobre o Inamet</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+                <ul class="navbar-nav flex-fill w-100 mb-2">
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="{{ route('admin.inametPrincipal.show') }}" >
+                            <i class="fe fe-user fe-16"></i>
+                            <span class="ml-3 item-text"> Sobre o Director do Inamet</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+
+                 {{-- Menu de Notícias --}}
+                    <p class="text-muted nav-heading mt-2 mb-1">
+                        <span> Notícias</span>
+                    </p>
+                    <li class="nav-item dropdown">
+                        <a href="#news" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-link fe-16"></i>
+                            <span class="ml-3 item-text"> Notícias</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="news">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.news.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Notícia</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.news.index') }}">
+                                    <span class="ml-1 item-text">Listar Notícias</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                     {{-- Menu Galeria --}}
+                    <p class="text-muted nav-heading mt-2 mb-1">
+                        <span> Galeria de Imagem</span>
+                    </p>
+                    <li class="nav-item dropdown">
+                        <a href="#image" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-image fe-16"></i>
+                            <span class="ml-3 item-text"> Galeria</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="image">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.gallery.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Galeria</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.gallery.index') }}">
+                                    <span class="ml-1 item-text">Listar Galerias</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                     {{-- Menu Video --}}
+                    <p class="text-muted nav-heading mt-2 mb-1">
+                        <span> Vídeos</span>
+                    </p>
+                    <li class="nav-item dropdown">
+                        <a href="#video" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-video fe-16"></i>
+                            <span class="ml-3 item-text"> Vídeos</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="video">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.video.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Video</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.video.index') }}">
+                                    <span class="ml-1 item-text">Listar Videos</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+
           
                 @if ('Administrador' == Auth::user()->level)
                     {{-- Menu de Utilizadores --}}

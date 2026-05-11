@@ -1,13 +1,129 @@
  <footer id="footer" role="contentinfo">
-                    <section id="footer_top" class="bg-color">
-                        <div class="container">
-                            
-                            <div></div>
+                    <section id="footer_top">
+    <div class="container">
+
+        <div id="contentTopFooter">
 
 
-                           
-                        </div>
-                    </section>
+            <div class="col">
+                
+                <a href="{{ route("site.home") }}">
+                    <img id="logoWhite" src="/assets/images/logo/logo.png" title="Logotipo do Inamet">
+                </a>
+
+            </div>
+
+        
+
+  
+       <div class="col">
+        <h1>Sobre o Inamet</h1>
+        <ul>
+             <li><a href="{{  route("site.aboutInamet") }}"> <i class="fa fa-arrow-right"></i> Sobre o Inamet</a></li>
+              <li><a href=""> <i class="fa fa-arrow-right"></i> Director do Inamet</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Previsão Climática</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Monitoramento</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Tempo</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Avisos Metereológicos</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Satélites</a></li>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Previsão Sazonal</a></li>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Sismos</a></li>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Ondas</a></li>
+        </ul>
+       </div>
+
+
+        <div class="col">
+        <h1>Informações</h1>
+        <ul>
+             <li><a href=""> <i class="fa fa-arrow-right"></i> Publicações</a></li>
+              <li><a href=""> <i class="fa fa-arrow-right"></i> Notícias</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Projectos</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Galeria</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Video</a></li>
+            <li><a href=""> <i class="fa fa-arrow-right"></i> Contacto</a></li>
+        </ul>
+       </div>
+
+
+         <div class="col">
+        <h1>Links úteis</h1>
+        <ul>
+             <li><a href="https://governo.gov.ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Portal do Governo de Angola</a></li>
+              <li><a href="https://minttics.gov.ao/ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Minttics</a></li>
+               <li><a href="https://www.infosi.gov.ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Infosi</a></li>
+            <li><a href="https://angolahoje.ao/" target="_blank"> <i class="fa fa-arrow-right"></i> Angola Hoje</a></li>
+          
+        </ul>
+       </div>
+
+             </div>
+
+
+        <div class="region region-footer">
+            <div id="block-mfweathercaption" class="block block-mf-weather-caption">
+                <div id="weather-caption">
+                    <!-- <button aria-label="Afficher la légende des prévisions" title="Afficher la légende des prévisions" type="button" v-on:click="displayModal()">Légende</button> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="block_rs">
+            <nav
+                role="navigation"
+                aria-labelledby="block-publicmenusocial-menu"
+                id="block-publicmenusocial"
+                class="block block-menu navigation menu--public---menu-reseaux-socia"
+            >
+                <span id="block-publicmenusocial-menu">Suivez-nous</span>
+
+                <ul class="menu">
+                    <li class="menu-icon-7 menu-item">
+                        <a
+                            href="{{ $configuration->facebook }}"
+                            class="fa fa-facebook-f-brands"
+                            target="_blank"
+                            title="{{ $configuration->facebook }}"
+                            >Facebook</a
+                        >
+                    </li>
+                    <li class="menu-icon-8 menu-item">
+                        <a
+                            href="{{ $configuration->twitter }}"
+                            class="fa fa-twitter-brands"
+                            target="_blank"
+                            title="{{ $configuration->twitter }}"
+                            >Twitter</a
+                        >
+                    </li>
+                    <li class="menu-icon-9 menu-item">
+                        <a
+                            href="{{ $configuration->linkedin }}"
+                            class="fa fa-linkedin-brands"
+                            target="_blank"
+                            title="{{ $configuration->linkedin }}"
+                            >Linkedin</a
+                        >
+                    </li>
+                    <li class="menu-icon-52 menu-item">
+                        <a
+                            href="{{ $configuration->instagram }}"
+                            class="fa fa-instagram-brands"
+                            target="_blank"
+                            title="{{ $configuration->instagram }}"
+                            >Instagram</a
+                        >
+                    </li>
+                   
+                   
+                </ul>
+            </nav>
+        </div>
+       
+    </div>
+</section>
+
+
                   
                     <section id="footer_bottom">
                         <div class="container">

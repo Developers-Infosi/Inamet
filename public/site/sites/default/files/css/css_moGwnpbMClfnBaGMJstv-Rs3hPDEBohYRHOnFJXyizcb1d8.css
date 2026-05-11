@@ -1640,7 +1640,15 @@ select::-ms-expand {
 #footer #footer_top {
     padding-top: 20px;
     background: #145e9a;
-    background-image: linear-gradient(to bottom, #145e9a 0%, #145e9a 100%);
+    background-image: url('/site/images/ilustracao-acelerar.svg');
+    background-position: center;
+    background-size: 85%;
+    background-position-x: 500px;
+    background-position-y: -100px;
+    background-repeat: repeat-x;
+
+    opacity: 0.96;
+   
 }
 #footer #footer_top .block_rs {
     padding: 10px;

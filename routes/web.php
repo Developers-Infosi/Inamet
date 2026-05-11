@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Site\AboutInametController;
+use App\Http\Controllers\Site\InametPrincipalController;
 use Illuminate\Support\Facades\Route;
 
 /* SITE */
@@ -14,7 +16,8 @@ Route::get('/Saude', ['as' => 'site.health', 'uses' => 'Site\Covid19GuidelineCon
 Route::get('/varíola-do-macaco', ['as' => 'site.smallpoxMonkey', 'uses' => 'Site\SmallpoxMonkeyController@index']);
 
 
- 
+Route::get("/sobre-o-inamet", [AboutInametController::class, 'index'])->name("site.aboutInamet"); 
+Route::get("/O-director-do-Inamet", [InametPrincipalController::class, 'index'])->name("site.principal");
 
 Route::get('admin/credenciamento/verify/{id}', ['as' => 'admin.credencial.verify', 'uses' => 'Admin\CredencialController@verify']);
 

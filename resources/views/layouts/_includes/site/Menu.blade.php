@@ -261,7 +261,7 @@
                                                     <ul class="menu">
                                                         <li class="menu-icon-193 menu-item">
                                                             <a
-                                                                href="#"
+                                                                href="{{ route("site.aboutInamet") }}"
                                                                 title="Sobre o INAMET"
                                                                 
                                                                 >Sobre o INAMET</a
@@ -269,7 +269,7 @@
                                                         </li>
                                                         <li class="menu-icon-196 menu-item">
                                                             <a
-                                                                href="#"
+                                                                href="{{ route("site.principal") }}"
                                                                 title="Director do INAMET"
                                                                
                                                                 >Director do INAMET</a

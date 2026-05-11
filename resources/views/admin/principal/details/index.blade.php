@@ -1,5 +1,5 @@
 @extends('layouts.merge.dashboard')
-@section('titulo', 'Sobre o Inamet')
+@section('titulo', 'Sobre o Director do Inamet')
 
 @section('content')
     <div class="card mb-2">
@@ -9,13 +9,13 @@
                 <div class="row align-items-center">
                     <div class="col">
                         <h2 class="h5 page-title">
-                            Sobre o Inamet
+                            Sobre o Director do Inamet
                         </h2>
                     </div>
                     <div class="col-auto">
-                        @isset($aboutInamet)
+                        @isset($inametPrincipal)
                             <a type="button" class="btn btn-sm btn-primary text-white"
-                                href="{{ route('admin.aboutInamet.edit', $aboutInamet->id) }}">
+                                href="{{ route('admin.inametPrincipal.edit', $inametPrincipal->id) }}">
                                 <span class="fe fe-edit fe-16 mr-2"></span>Editar o Texto
                             </a>
                         @endisset
@@ -25,7 +25,7 @@
 
         </div>
     </div>
-    @isset($aboutInamet)
+    @isset($inametPrincipal)
         <div class="card shadow">
             <div class="card-body">
 
@@ -35,24 +35,32 @@
 
                             <b>Titulo:</b>
                             <p class="mb-1 text-dark">
-                            <h4> {{ $aboutInamet->title }}</h4>
+                            <h4> {{ $inametPrincipal->name }}</h4>
                             </p>
                         </div>
                         <div class="col-md-12 mb-2">
 
                             <b>Corpo:</b><br>
                             <p class="mb-1 text-dark">
-                                {!! html_entity_decode($aboutInamet->body) !!}
+                                {!! html_entity_decode($inametPrincipal->biograph) !!}
                             </p>
+                        </div>
+
+                          <div class="col-md-12 mb-2">
+
+                            <b>Foto:</b><br>
+                            <div class="mb-1 text-dark">
+                                <img src="/storage/{{ $inametPrincipal->photo }}" class="img-fluid">
+                            </div>
                         </div>
 
                     </div> <!-- .row -->
                     <div class="row align-items-center">
                         <div class="col-md-7 mb-2">
                             <hr>
-                            <p class="mb-1 text-dark"><b>Data de Cadastro:</b> {{ $aboutInamet->created_at }}
+                            <p class="mb-1 text-dark"><b>Data de Cadastro:</b> {{ $inametPrincipal->created_at }}
                             </p>
-                            <p class="mb-1 text-dark"><b>Última Actualização:</b> {{ $aboutInamet->updated_at }}
+                            <p class="mb-1 text-dark"><b>Última Actualização:</b> {{ $inametPrincipal->updated_at }}
                             </p>
 
                         </div>

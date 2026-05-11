@@ -1,12 +1,12 @@
 @extends('layouts.merge.dashboard')
-@section('titulo', 'Editar o Sobre a Reunião')
+@section('titulo', 'Editar Informações sobre o Director do Inamet')
 
 @section('content')
     <div class="card mb-2">
         <div class="card-body">
             <h2 class="h5 page-title">
-                <a href="{{ route('admin.aboutInamet.show') }}"><u>Ver Sobre</u></a>
-                > Editar as Informações Sobre o Inamet
+                <a href="{{ route('admin.inametPrincipal.show') }}"><u>Ver Detalhes Sobre o Director do Inamet</u></a>
+                > Editar as Informações Sobre o Director do Inamet
 
             </h2>
         </div>
@@ -22,11 +22,11 @@
                     </ul>
                 </div>
             @endif
-            <form action='{{ route('admin.aboutInamet.update', 1) }}' method="POST" enctype="multipart/form-data"
+            <form action='{{ route('admin.inametPrincipal.update', 1) }}' method="POST" enctype="multipart/form-data"
                 class="row">
                 @csrf
                 @method('PUT')
-                @include('forms._formAbout.index')
+                @include('forms._formInametPrincipal.index')
                 <div class="col-md-12">
                     <div class="form-group text-center">
                         <button type="submit" class="btn px-5 col-md-4 btn-primary">

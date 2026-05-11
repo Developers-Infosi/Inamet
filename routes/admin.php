@@ -43,6 +43,12 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+  
+  /**about */
+  Route::get('admin/O-Director-do-Inamet/show', ['as' => 'admin.inametPrincipal.show', 'uses' => 'Admin\InametPrincipalController@show']);
+  Route::get('admin/O-Director-do-Inamet/edit/{id}', ['as' => 'admin.inametPrincipal.edit', 'uses' => 'Admin\InametPrincipalController@edit']);
+  Route::put('admin/O-Director-do-Inamet/update/{id}', ['as' => 'admin.inametPrincipal.update', 'uses' => 'Admin\InametPrincipalController@update']);
+
 
 
 
@@ -124,9 +130,9 @@ Route::middleware(['auth'])->group(function () {
   /* End imageGallery */
 
   /**about */
-  Route::get('admin/about/show', ['as' => 'admin.about.show', 'uses' => 'Admin\AboutController@show']);
-  Route::get('admin/about/edit/{id}', ['as' => 'admin.about.edit', 'uses' => 'Admin\AboutController@edit']);
-  Route::put('admin/about/update/{id}', ['as' => 'admin.about.update', 'uses' => 'Admin\AboutController@update']);
+  Route::get('admin/about-inamet/show', ['as' => 'admin.aboutInamet.show', 'uses' => 'Admin\AboutInametController@show']);
+  Route::get('admin/about-inamet/edit/{id}', ['as' => 'admin.aboutInamet.edit', 'uses' => 'Admin\AboutInametController@edit']);
+  Route::put('admin/about-inamet/update/{id}', ['as' => 'admin.aboutInamet.update', 'uses' => 'Admin\AboutInametController@update']);
 
   /**about */
   Route::get('admin/Quem-é-Quem/show', ['as' => 'admin.whoIsWho.show', 'uses' => 'Admin\WhoIsWhoController@show']);
