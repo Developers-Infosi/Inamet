@@ -284,4 +284,15 @@ Route::middleware(['auth'])->group(function () {
   Route::put('admin/news/update/{id}', ['as' => 'admin.news.update', 'uses' => 'Admin\NewsController@update']);
   Route::get('admin/news/delete/{id}', ['as' => 'admin.news.delete', 'uses' => 'Admin\NewsController@destroy']);
   /* end news */
+
+    /* publication */
+  Route::get('admin/publicacoes/index', ['as' => 'admin.publication.index', 'uses' => 'Admin\PublicationController@list']);
+  Route::get('admin/publicacoes/show/{id}', ['as' => 'admin.publication.show', 'uses' => 'Admin\PublicationController@show']);
+  Route::get('admin/publicacoes/create', ['as' => 'admin.publication.create', 'uses' => 'Admin\PublicationController@create']);
+  Route::post('admin/publicacoes/store', ['as' => 'admin.publication.store', 'uses' => 'Admin\PublicationController@store']);
+  Route::get('admin/publicacoes/edit/{id}', ['as' => 'admin.publication.edit', 'uses' => 'Admin\PublicationController@edit']);
+  Route::put('admin/publicacoes/update/{id}', ['as' => 'admin.publication.update', 'uses' => 'Admin\PublicationController@update']);
+  Route::get('admin/publicacoes/delete/{id}', ['as' => 'admin.publication.delete', 'uses' => 'Admin\PublicationController@destroy']);
+  /* end publication */
+
 });

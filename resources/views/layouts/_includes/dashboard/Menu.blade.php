@@ -117,6 +117,31 @@
                         </ul>
                     </li>
 
+                      {{-- Menu Publicações --}}
+                    <p class="text-muted nav-heading mt-2 mb-1">
+                        <span> Publicações</span>
+                    </p>
+                    <li class="nav-item dropdown">
+                        <a href="#publication" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle nav-link">
+                            <i class="fe fe-file fe-16"></i>
+                            <span class="ml-3 item-text"> Publicações</span>
+                        </a>
+                        <ul class="collapse list-unstyled pl-4 w-100" id="publication">
+
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.publication.create') }}">
+                                    <span class="ml-1 item-text">Cadastrar Publicação</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pl-3" href="{{ route('admin.publication.index') }}">
+                                    <span class="ml-1 item-text">Listar Publicações</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                      {{-- Menu Galeria --}}
                     <p class="text-muted nav-heading mt-2 mb-1">
                         <span> Galeria de Imagem</span>
