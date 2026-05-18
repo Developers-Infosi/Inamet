@@ -303,7 +303,7 @@
                                                     <ul class="menu">
                                                         <li class="menu-icon-193 menu-item">
                                                             <a
-                                                                href="#"
+                                                                href="{{ route("site.weatherForecast") }}"
                                                                 title="Previsão Climática"
                                                                 
                                                                 >Previsão Climática</a
@@ -311,7 +311,7 @@
                                                         </li>
                                                         <li class="menu-icon-196 menu-item">
                                                             <a
-                                                                href="#"
+                                                                href="{{ route("site.monitoring") }}"
                                                                 title="Monitoramento"
                                                                
                                                                 >Monitoramento</a
@@ -325,31 +325,31 @@
                                         </li>
 
                                         <li class="menu-icon-466 menu-item">
-                                            <a href="#" >Tempo</a>
+                                            <a href="{{ route("site.weather") }}" >Tempo</a>
                                         </li>
 
                                         <li class="menu-icon-466 menu-item">
-                                            <a href="#" >Avisos metereológico</a>
+                                            <a href="{{ route("site.weatherWarning") }}" >Avisos metereológico</a>
                                         </li>
 
                                           <li class="menu-icon-466 menu-item">
-                                            <a href="#" >Satélites</a>
+                                            <a href="{{ route("site.satellite") }}" >Satélites</a>
                                         </li>
 
                                            <li class="menu-icon-466 menu-item">
-                                            <a href="#" >Previsão sazonal</a>
+                                            <a href="{{ route("site.seasonal") }}" >Previsão sazonal</a>
                                         </li>
 
                                            <li class="menu-icon-466 menu-item">
-                                            <a href="#" >Previsão numérica</a>
+                                            <a href="{{ route("site.prediction") }}" >Previsão numérica</a>
                                         </li>
 
                                            <li class="menu-icon-466 menu-item">
-                                            <a href="#" >Ondas</a>
+                                            <a href="{{ route("site.waves") }}" >Ondas</a>
                                         </li>
 
                                            <li class="menu-icon-466 menu-item">
-                                            <a href="#" >Sismos</a>
+                                            <a href="{{ route("site.earthquake") }}" >Sismos</a>
                                         </li>
 
                                          
@@ -367,43 +367,42 @@
                                                     <ul class="menu">
                                                         <li class="menu-icon-45 menu-item">
                                                             <a
-                                                                href="actualites/a-la-une.html"
-                                                                data-drupal-link-system-path="node/42503"
+                                                                href="{{ route("site.publication") }}"
+                                                                
                                                                 >Publicações</a
                                                             >
                                                         </li>
                                                         <li class="menu-icon-43 menu-item">
                                                             <a
-                                                                href="actualites/previsions.html"
-                                                                data-drupal-link-system-path="node/42501"
+                                                                href="{{ route("site.news") }}"
+                                                                
                                                                 >Notícias</a
                                                             >
                                                         </li>
                                                         <li class="menu-icon-49 menu-item">
                                                             <a
-                                                                href="actualites/climat.html"
-                                                                data-drupal-link-system-path="node/87031"
+                                                                href="{{ route("site.project") }}"
+                                                
                                                                 >Projectos</a
                                                             >
                                                         </li>
                                                         <li class="menu-icon-50 menu-item">
                                                             <a
-                                                                href="actualites/planete.html"
-                                                                data-drupal-link-system-path="node/87085"
+                                                                href="{{ route("site.gallery") }}"
                                                                 >Galeria</a
                                                             >
                                                         </li>
                                                         <li class="menu-icon-51 menu-item">
                                                             <a
-                                                                href="actualites/entretiens.html"
-                                                                data-drupal-link-system-path="node/87106"
+                                                                href="{{ route("site.videos") }}"
+                                                               
                                                                 >Vídeos</a
                                                             >
                                                         </li>
                                                         <li class="menu-icon-80 menu-item">
                                                             <a
-                                                                href="meteo-et-histoire.html"
-                                                                data-drupal-link-system-path="node/87227"
+                                                                href="{{ route("site.contact") }}"
+                                                                
                                                                 >Contacto</a
                                                             >
                                                         </li>
@@ -665,14 +664,14 @@
                                         <ul class="menu">
                                             <li class="menu-icon-146 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.aboutInamet") }}"
                                                   
                                                     >Sobre o Inamet</a
                                                 >
                                             </li>
                                             <li class="menu-icon-93 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.principal") }}"
                                                     
                                                     >Director do Inamet</a
                                                 >
@@ -693,14 +692,14 @@
                                           
                                             <li class="menu-icon-313 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.weatherForecast") }}"
                                                     >Previsão Climática</a
                                                 >
                                             </li>
 
                                                <li class="menu-icon-313 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.monitoring") }}"
                                                     >Monitoramento</a
                                                 >
                                             </li>
@@ -710,23 +709,16 @@
                                  
                                     <li class="menu-icon-476 menu-item">
                                         <a
-                                            href="#"
+                                            href="{{ route("site.weather") }}"
                                             >Tempo</a
                                         >
                                     </li>
 
 
 
-                                    <li class="menu-icon-477 menu-item">
-                                        <a href="#"
-                                            >Avisos metereológicos</a
-                                        >
-                                    </li>
-
-
                                     <li class="menu-icon-478 menu-item">
                                         <a
-                                            href="#"
+                                            href="{{ route("site.weatherWarning") }}"
                                             
                                             >Avisos Metereológicos</a
                                         >
@@ -735,7 +727,7 @@
 
                                     <li class="menu-icon-479 menu-item">
                                         <a
-                                            href="#"
+                                            href="{{ route("site.satellite") }}"
                                             
                                             >Satélites</a
                                         >
@@ -743,7 +735,7 @@
 
                                       <li class="menu-icon-479 menu-item">
                                         <a
-                                            href="#"
+                                            href="{{ route("site.seasonal") }}"
                                             
                                             >Previsão Sazonal</a
                                         >
@@ -751,7 +743,7 @@
 
                                       <li class="menu-icon-479 menu-item">
                                         <a
-                                            href="#"
+                                            href="{{ route("site.prediction") }}"
                                             
                                             >Previsão Numérica</a
                                         >
@@ -759,7 +751,7 @@
 
                                       <li class="menu-icon-479 menu-item">
                                         <a
-                                            href="#"
+                                            href="{{ route("site.waves") }}"
                                             
                                             >Ondas</a
                                         >
@@ -767,7 +759,7 @@
 
                                       <li class="menu-icon-479 menu-item">
                                         <a
-                                            href="#"
+                                            href="{{ route("site.earthquake") }}"
                                             
                                             >Sismos</a
                                         >
@@ -791,42 +783,42 @@
                                         <ul class="menu">
                                             <li class="menu-icon-481 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.publication") }}"
                                                     >Publicações</a
                                                 >
                                             </li>
                                             
                                                 <li class="menu-icon-481 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.news") }}"
                                                     >Notícias</a
                                                 >
                                             </li>
 
                                                 <li class="menu-icon-481 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.project") }}"
                                                     >Projectos</a
                                                 >
                                             </li>
 
                                                 <li class="menu-icon-481 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.gallery") }}"
                                                     >Galeria</a
                                                 >
                                             </li>
 
                                                 <li class="menu-icon-481 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.videos") }}"
                                                     >Vídeos</a
                                                 >
                                             </li>
 
                                                 <li class="menu-icon-481 menu-item">
                                                 <a
-                                                    href="#"
+                                                    href="{{ route("site.contact") }}"
                                                     >Contactos</a
                                                 >
                                             </li>

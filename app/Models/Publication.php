@@ -16,7 +16,7 @@ class Publication extends Model
 
 
     protected $casts = [
-        'published_at' => 'datetime'
+        'published_at' => 'date'
     ];
 
     protected $dates= ["deleted_at"];

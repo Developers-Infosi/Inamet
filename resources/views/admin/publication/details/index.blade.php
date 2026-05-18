@@ -32,7 +32,7 @@
 
                                             <div class="card border-0 bg-transparent">
                                                 <div class="card-img-top img-fluid rounded"
-                                                    style='background-image:url("/storage/{{ $publication->cover }}");background-position:center;background-size:cover;height:200px;width:50%;'>
+                                                    style='background-image:url("/storage/{{ $publication->cover }}");background-position:center;background-size:cover;height:600px;width:100%;'>
                                                 </div>
                                             </div> <!-- .card -->
                                         </div> <!-- .card-deck -->

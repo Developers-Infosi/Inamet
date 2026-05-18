@@ -13,11 +13,11 @@
 
     .popup {
       text-align: center;
-      font-family: Arial;
+      font-family: Inter, Arial, sans-serif;
     }
 
     .temp {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
     }
   </style>
@@ -25,7 +25,7 @@
 
 <body>
 
-<h2>🌍 Clima Atual em Angola</h2>
+
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -33,13 +33,23 @@
 <script>
 const API_KEY = "SUA_API_KEY";
 
-// 🇦🇴 mapa Angola
+// mapa Angola
 const map = L.map('map').setView([-11.2027, 17.8739], 6);
 
 // base mapa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap'
 }).addTo(map);
+
+
+
+// 🌦️ CAMADA DE NUVENS (nível profissional)
+L.tileLayer(
+  'https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=0aea1068522467a30c4dbdc8912bf133',
+  { opacity: 0.5 }
+).addTo(map);
+
+
 
 // 21 províncias
 const provinces = [
@@ -66,32 +76,54 @@ const provinces = [
   { name: "Zaire", lat: -6.13, lon: 12.37 }
 ];
 
-// 🌦️ função clima
+
+
+// 🌦️ função melhorada
 async function loadWeather(p) {
-  const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${p.lat}&lon=${p.lon}&appid=${'0aea1068522467a30c4dbdc8912bf133'}&units=metric`
-  );
+  try {
 
-  const data = await res.json();
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${p.lat}&lon=${p.lon}&appid=0aea1068522467a30c4dbdc8912bf133&units=metric`
+    );
 
-  const temp = data.main.temp;
-  const desc = data.weather[0].description;
-  const icon = data.weather[0].icon;
+    const data = await res.json();
 
-  const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    const temp = data.main.temp;
+    const desc = data.weather[0].description;
+    const icon = data.weather[0].icon;
+    const wind = data.wind.speed;
+    const humidity = data.main.humidity;
 
-  // marker
-  const marker = L.marker([p.lat, p.lon]).addTo(map);
+    const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
-  marker.bindPopup(`
-    <div class="popup">
-      <h3>${p.name}</h3>
-      <img src="${iconUrl}" />
-      <div class="temp">${temp}°C</div>
-      <div>${desc}</div>
-    </div>
-  `);
+
+
+    // marcador com popup profissional
+    const marker = L.marker([p.lat, p.lon]).addTo(map);
+
+    marker.bindPopup(`
+      <div class="popup">
+        <h3>${p.name}</h3>
+
+        <img src="${iconUrl}" />
+
+        <div class="temp">${temp}°C</div>
+
+        <div>${desc}</div>
+
+        <hr>
+
+        <div>🌬️ Vento: ${wind} m/s</div>
+        <div>💧 Humidade: ${humidity}%</div>
+      </div>
+    `);
+
+  } catch (err) {
+    console.log("Erro em:", p.name, err);
+  }
 }
+
+
 
 // carregar tudo
 provinces.forEach(p => loadWeather(p));

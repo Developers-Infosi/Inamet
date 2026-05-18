@@ -1,69 +1,83 @@
 @extends('layouts.merge.site')
-@section('titulo', 'Detalhes da Notícia')
+@section('titulo', 'Sobre o Inamet')
 @section('content')
 
-<section class="hero-page"><img class="image-banner" src="/assets/images/news.jpg" loading="lazy" sizes="(max-width: 1800px) 100vw, 1800px" srcset="/assets/images/news.jpg 500w, /assets/images/news.jpg 800w, /assets/images/news.jpg 1080w, /assets/images/news.jpg 1600w, /assets/images/news.jpg 1800w" alt="" class="image-background-banner">
-    <div class="overlay-page">
-      <div class="contain">
-        <div class="text-banner">
-          <div class="texto-conteudo-hero">
-            <h1 class="heading-13 white"><strong>{{ $news->title }}</strong></h1>
-            <div class="linha-vermelha"></div>
-          </div>
-        </div>
+
+<div class="container" id="main_container">
+<div id="page">
+<div class="page_sections_container">
+                         
+<div  style="padding-block: 50px; color:#222;">
+
+  <div id="badge">
+    <a href="{{ route("site.home") }}">Home</a> /
+    <a href="#">Informações</a> /
+   <a href="{{ route("site.news") }}">Notícias</a> /
+   <a href="#">{{ $news->title }}</a>
+  </div>
+
+<section id="mainSection">
+
+  
+
+  <div id="singleNews">
+
+    <div id="imageSection">
+      <div>
+          <img src="/storage/{{ $news->path }}" />
+      </div>
+    
+
+      <div>
+        <h1>{{ $news->title }}</h1>
+        <span>Autor: {{ $news->typewriter  }}</span>
+        <span>Data: {{ date("d-m-Y",strtotime($news->date)) }}</span>
       </div>
     </div>
-  </section>
+
+    <div id="textSection">
+      {!! html_entity_decode($news->body) !!}
+    </div>
+    
+
+   
+
+  </div>
+
+
+   <div id="otherNews">
+        <h3>Outras Notícias</h3>
+
+
+        @foreach ($lasted as $item)
+
+        <a href="{{ url("/noticia/".urlencode($item->title)) }}" id="otherNewsRow">
+
+          <div>
+            <p>
+              {{ $item->title }}
+            </p>
+            <span>{{ date("d-m-Y",strtotime($item->date)) }}</span>
+          </div>
+
+          <div>
+            <img src="/storage/{{ $item->path }}" alt="" />
+          </div>
+
+        </a>
+          
+        @endforeach
+
+        
+    </div>
 
  
-  <section class="blog_area single-post-area section-padding pt-3 mt-5 bg-white">
-  <div class="container">
-    <div class="row">
-     
-      <div class="col-lg-8">
-        <div class="single-post">
-          <div class="feature-img mb-3">
-            <img class="img-fluid" src="/storage/{{ $news->path }}" alt="Imagem da notícia">
-          </div>
-
-          <ul class="blog-info-link mb-3">
-            <li><i class="fa fa-calendar"></i> Postado em: {{ date('d/m/Y', strtotime($news->date)) }}</li>
-          </ul>
-
-          <div class="text-justify">
-            <p>{!! html_entity_decode($news->body) !!}</p>
-          </div>
-        </div>
-      </div>
-
-    
-      <div class="col-lg-4">
-        <div class="blog_right_sidebar">
-          <aside class="single_sidebar_widget popular_post_widget">
-            <h3 class="widget_title text-danger">Outras Notícias</h3>
-
-            @foreach ($lasted as $item)
-              <div class="media post_item">
-                <img src="/storage/{{ $item->path }}" alt="{{ $item->title }}" class="img-fluid">
-                <div class="media-body">
-                  <a href="{!! url('/noticia/' . urlencode($item->title)) !!}">
-                    <h4>{{ $item->title }}</h4>
-                  </a>
-                  <p>{{ date('d-m-Y', strtotime($item->date)) }}</p>
-                </div>
-              </div>
-            @endforeach
-
-          </aside>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
-
-       
-
-
-
-
+   
+</div>
+                          
+                          
+</div>
+</div>
+</div>
 @endsection

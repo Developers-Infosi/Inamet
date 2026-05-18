@@ -50,7 +50,7 @@
 
                             <b>Foto:</b><br>
                             <div class="mb-1 text-dark">
-                                <img src="/storage/{{ $inametPrincipal->photo }}" class="img-fluid">
+                                <img src="/storage/{{ $inametPrincipal->photo }}"  style="width:30%;height: auto;border-radius:1rem;">
                             </div>
                         </div>
 

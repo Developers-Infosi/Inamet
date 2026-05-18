@@ -5,6 +5,9 @@
     <head>
         <meta charset="utf-8">
         <title>INAMET</title>
+
+
+        
        
         <meta
             name="description"
@@ -42,8 +45,17 @@
     <link rel="stylesheet" media="all" href="/site/sites/default/files/custom_css/menu-css/menu_icons_1775611065d5dc.html?td68b1" />
     <link rel="stylesheet" media="all" href="/site/sites/default/files/css/css_Pkfepx9UUti9qoZ9YgShNNqdb-cDFSZ4PzzSggsCX5w4231.css?delta=2&amp;language=fr&amp;theme=public&amp;include=eJx9kutuwyAMhV-oq6W9kOWAk6ACRlxadU-_ONnakHb7Bec7x8YCwohkC14_IWw7ymbmRZ_C0dnYQDkzjnSV7AocwZpo3nN1EStHS9EwvIOaNBIX2ZCtq0s1ebw5O3GFfzytezDYi87BRJmmTGku8AdHalVSliBa6QJNjJbusBerE0fJgaqTWLAkNksbXru-d7TGyyTws6oOlNDTnfPvhXZAE1GqG53ZmsERaCKJw1GkcoZOqVdY3w11HOilutVVzzh4MRfopbpXZ1mW8Zdj1pn3evMn5_XJcGay2-lH1ueSpJbgFfWp51sfmeZuTHXmjIaS3gC8Ik19SeTH34IjOO0-gc0tkT8_ybnF1Abvysz2tO4MTF4G8h-l3r2L0zdatjvo" />
     <link rel="stylesheet" media="all" href="/site/sites/default/files/css/css_moGwnpbMClfnBaGMJstv-Rs3hPDEBohYRHOnFJXyizcb1d8.css?delta=3&amp;language=fr&amp;theme=public&amp;include=eJx9kutuwyAMhV-oq6W9kOWAk6ACRlxadU-_ONnakHb7Bec7x8YCwohkC14_IWw7ymbmRZ_C0dnYQDkzjnSV7AocwZpo3nN1EStHS9EwvIOaNBIX2ZCtq0s1ebw5O3GFfzytezDYi87BRJmmTGku8AdHalVSliBa6QJNjJbusBerE0fJgaqTWLAkNksbXru-d7TGyyTws6oOlNDTnfPvhXZAE1GqG53ZmsERaCKJw1GkcoZOqVdY3w11HOilutVVzzh4MRfopbpXZ1mW8Zdj1pn3evMn5_XJcGay2-lH1ueSpJbgFfWp51sfmeZuTHXmjIaS3gC8Ik19SeTH34IjOO0-gc0tkT8_ybnF1Abvysz2tO4MTF4G8h-l3r2L0zdatjvo" />
+    <link rel="stylesheet" href="/site/css/fancybox.css"/>
 
+    <link rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="HandheldFriendly" content="true" />
     <meta name="apple-touch-fullscreen" content="YES" />

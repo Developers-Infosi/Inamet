@@ -121,9 +121,7 @@ class PublicationController extends Controller
 
             'title' => ['required','string', 'min:5'],
             'author' => ['required', 'string', 'min:5'],
-            'cover' => ['required', 'mimes:png,jpg,jpeg'],
             'category' => ['required', 'string', 'min:4'],
-            'document'=> ['nullable', 'mimes:png,jpg,jpeg,pptx,docx,pdf'],
             'published_at'=> ['nullable','date'],
             'body' => ['string', 'min:5']
 
@@ -143,7 +141,7 @@ class PublicationController extends Controller
         }
 
 
-        $publication = Publication::update([
+        $publication = Publication::find($id)->update([
 
             'title' => $request->title,
             'author' => $request-> author,

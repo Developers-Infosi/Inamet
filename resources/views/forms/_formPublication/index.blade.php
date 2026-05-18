@@ -30,8 +30,8 @@
 
 <div class="col-md-4">
     <div class="form-group">
-        <label for="date">Date de Publicação</label>
-        <input type="date" name="published_atpº" id="published_atpº" value="{{ isset($publication->published_atpº) ? $publication->published_atpº : old('published_atpº') }}"
+        <label for="date">Data de Publicação</label>
+        <input type="date" name="published_at" id="published_at" value="{{ isset($publication->published_at) ? $publication->published_at : old('published_at') }}"
             class="form-control border-secondary" required>
     </div>
 </div> <!-- /.col -->
@@ -64,8 +64,9 @@
         <select name="status" class="form-control">
 
             @if(isset($publication->status))
-                <option disabled class="text-dark">{{ $publication->status }}</option>
+                <option selected class="text-dark" value="{{ $publication->status }}">{{ $publication->status }}</option>
             @else
+                <option selected>Selecione um status</option>
                 <option value="RECEBIDO">RECEBIDO</option>
                 <option value="APROVADO">APROVADO</option>
                 

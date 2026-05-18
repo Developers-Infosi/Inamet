@@ -1,7 +1,19 @@
 <?php
 
 use App\Http\Controllers\Site\AboutInametController;
+use App\Http\Controllers\Site\EarthquakeController;
 use App\Http\Controllers\Site\InametPrincipalController;
+use App\Http\Controllers\Site\MonitoringController;
+use App\Http\Controllers\Site\NumericalPredictionController;
+use App\Http\Controllers\Site\ProjectController;
+use App\Http\Controllers\Site\PublicationController;
+use App\Http\Controllers\Site\SatelliteController;
+use App\Http\Controllers\Site\SeasonalForecastController;
+use App\Http\Controllers\Site\VideoController;
+use App\Http\Controllers\Site\WavesController;
+use App\Http\Controllers\Site\WeatherController;
+use App\Http\Controllers\Site\WeatherForecastController;
+use App\Http\Controllers\Site\WeatherWarningsController;
 use Illuminate\Support\Facades\Route;
 
 /* SITE */
@@ -102,6 +114,8 @@ Route::get('/noticias', ['as' => 'site.news', 'uses' => 'Site\NewsController@ind
 Route::get('/noticia/{title}', ['as' => 'site.news.show', 'uses' => 'Site\NewsController@show']);
 
 
+Route::get("/video", [VideoController::class, 'index'])->name("site.videos");
+
 /* signup */
 Route::get('/acreditação', ['as' => 'site.accreditation.create', 'uses' => 'Site\AccreditationController@create']);
 route::post('/acreditação/store', ['as' => 'site.accreditation.store', 'uses' => 'Site\AccreditationController@store']);
@@ -118,7 +132,27 @@ Route::get('/Lista-de-transportes/{name}', ['as' => 'site.laceCar.show', 'uses' 
 
 Route::get('/registar', ['as' => 'site.register.index', 'uses' => 'Site\RegisterController@register']);
 Route::get('/entrar', ['as' => 'site.login.index', 'uses' => 'Site\RegisterController@index']);
+Route::get('/publicacoes', [PublicationController::class, 'index'])->name("site.publication");
 
+Route::get('/projectos', [ProjectController::class, 'index'])->name("site.project");
+
+Route::get('/sismos', [EarthquakeController::class, 'index'])->name("site.earthquake");
+Route::get('/ondas', [WavesController::class, 'index'])->name("site.waves");
+
+Route::get('/previsoes-numericas', [NumericalPredictionController::class, 'index'])->name("site.prediction");
+
+
+Route::get('/previsão-sazonal', [SeasonalForecastController::class, 'index'])->name("site.seasonal");
+Route::get('/satelites', [SatelliteController::class, 'index'])->name("site.satellite");
+
+
+Route::get('/avisos-metereologicos', [WeatherWarningsController::class, 'index'])->name("site.weatherWarning");
+
+Route::get('/tempo', [WeatherController::class, 'index'])->name("site.weather");
+
+Route::get('/previsão-climática', [WeatherForecastController::class, 'index'])->name("site.weatherForecast");
+
+Route::get('/monitoramento', [MonitoringController::class, 'index'])->name("site.monitoring");
 /* END SITE */
 
 

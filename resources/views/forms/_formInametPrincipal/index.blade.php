@@ -11,7 +11,7 @@
     <div class="form-group">
         <div class="custom-file">
             <label class="form-label border-secondary" >Selecione a Imagem do Director</label>
-            <input type="file" class="form-control" name="photo" id="photo" required>
+            <input type="file" class="form-control" name="photo" id="photo" >
 
         </div>
     </div>

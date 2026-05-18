@@ -36,12 +36,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/user-approve/{id}', [UserController::class, 'approve'])->name('admin.user.approve');
 
-    /* end user */
-  });
-
-
-
-
 
   
   /**about */
@@ -49,67 +43,6 @@ Route::middleware(['auth'])->group(function () {
   Route::get('admin/O-Director-do-Inamet/edit/{id}', ['as' => 'admin.inametPrincipal.edit', 'uses' => 'Admin\InametPrincipalController@edit']);
   Route::put('admin/O-Director-do-Inamet/update/{id}', ['as' => 'admin.inametPrincipal.update', 'uses' => 'Admin\InametPrincipalController@update']);
 
-
-
-
-
-
-
-  /* lace car */
-  Route::get('admin/reda-car/index', ['as' => 'admin.laceCar.index', 'uses' => 'Admin\LaceCarController@index']);
-  Route::get('admin/reda-car/show/{id}', ['as' => 'admin.laceCar.show', 'uses' => 'Admin\LaceCarController@show']);
-  Route::get('admin/reda-car/create', ['as' => 'admin.laceCar.create', 'uses' => 'Admin\LaceCarController@create']);
-  Route::post('admin/reda-car/store', ['as' => 'admin.laceCar.store', 'uses' => 'Admin\LaceCarController@store']);
-  Route::get('admin/reda-car/edit/{id}', ['as' => 'admin.laceCar.edit', 'uses' => 'Admin\LaceCarController@edit']);
-  Route::put('admin/reda-car/update/{id}', ['as' => 'admin.laceCar.update', 'uses' => 'Admin\LaceCarController@update']);
-  Route::get('admin/reda-car/delete/{id}', ['as' => 'admin.laceCar.delete', 'uses' => 'Admin\LaceCarController@destroy']);
-  /* end lace car */
-
-  /* HospitalDocuments */
-  Route::get('admin/informacoes-reda-car/show', ['as' => 'admin.laceCarDocument.show', 'uses' => 'Admin\LaceCarDocumentController@show']);
-  Route::get('admin/informacoes-reda-car/edit/{id}', ['as' => 'admin.laceCarDocument.edit', 'uses' => 'Admin\LaceCarDocumentController@edit']);
-  Route::put('admin/informacoes-reda-car/update/{id}', ['as' => 'admin.laceCarDocument.update', 'uses' => 'Admin\LaceCarDocumentController@update']);
-  /* end HospitalDocuments */
-
-
-
-  /* HospitalDocuments */
-  Route::get('admin/informacoes-uteis/show', ['as' => 'admin.Usefulinformation.show', 'uses' => 'Admin\UsefulinformationController@show']);
-  Route::get('admin/informacoes-uteis/edit/{id}', ['as' => 'admin.Usefulinformation.edit', 'uses' => 'Admin\UsefulinformationController@edit']);
-  Route::put('admin/informacoes-uteis/update/{id}', ['as' => 'admin.Usefulinformation.update', 'uses' => 'Admin\UsefulinformationController@update']);
-  /* end HospitalDocuments */
-
-
-  Route::middleware(['Visualizador'])->group(function () {
-    /* estatistica */
-    Route::get('admin/estatistica/show', ['as' => 'admin.estatistic.index', 'uses' => 'Admin\EstatisticController@index']);
-    Route::get('admin/estatistica/index', ['as' => 'admin.estatistic.show', 'uses' => 'Admin\EstatisticController@show']);
-    Route::get('admin/estatistica/category', ['as' => 'admin.estatistic.category', 'uses' => 'Admin\EstatisticController@category']);
-    Route::get('admin/estatistica/status', ['as' => 'admin.estatistic.status', 'uses' => 'Admin\EstatisticController@status']);
-    Route::get('admin/estatistica/category/show', ['as' => 'admin.estatistic.categoryShow', 'uses' => 'Admin\EstatisticController@categoryShow']);
-  });
-  Route::middleware(['Editor'])->group(function () {
-
-    Route::get('admin/signup/index', ['as' => 'admin.signup.index', 'uses' => 'Admin\SignupController@list']);
-    Route::get('admin/signup/show/{id}', ['as' => 'admin.signup.show', 'uses' => 'Admin\SignupController@show']);
-    Route::get('admin/signup/pdf', ['as' => 'admin.signup.print', 'uses' => 'Admin\SignupController@print']);
-  });
-
-  Route::middleware(['Editor'])->group(function () {
-
-    /* signup */
-    Route::get('admin/signup/edit/{id}', ['as' => 'admin.signup.edit', 'uses' => 'Admin\SignupController@edit']);
-    Route::put('admin/signup/update/{id}', ['as' => 'admin.signup.update', 'uses' => 'Admin\SignupController@update']);
-
-    Route::get('admin/credenciamento/{id}', ['as' => 'admin.credencial.print', 'uses' => 'Admin\CredencialController@print']);
-  });
-
-
-
-  //Jornalistas
-  Route::get('admin/jornalistas/index', ['as' => 'admin.press.index', 'uses' => 'Admin\PressController@list']);
-  Route::get('admin/jornalistas/show/{id}', ['as' => 'admin.press.show', 'uses' => 'Admin\PressController@show']);
-  Route::get('admin/jornalistas/print/{id}', ['as' => 'admin.press.print', 'uses' => 'Admin\PressController@print']);
 
 
 
@@ -134,10 +67,6 @@ Route::middleware(['auth'])->group(function () {
   Route::get('admin/about-inamet/edit/{id}', ['as' => 'admin.aboutInamet.edit', 'uses' => 'Admin\AboutInametController@edit']);
   Route::put('admin/about-inamet/update/{id}', ['as' => 'admin.aboutInamet.update', 'uses' => 'Admin\AboutInametController@update']);
 
-  /**about */
-  Route::get('admin/Quem-é-Quem/show', ['as' => 'admin.whoIsWho.show', 'uses' => 'Admin\WhoIsWhoController@show']);
-  Route::get('admin/Quem-é-Quem/edit/{id}', ['as' => 'admin.whoIsWho.edit', 'uses' => 'Admin\WhoIsWhoController@edit']);
-  Route::put('admin/Quem-é-Quem/update/{id}', ['as' => 'admin.whoIsWho.update', 'uses' => 'Admin\WhoIsWhoController@update']);
 
   /* slideshow */
   Route::get('admin/slideshow/index', ['as' => 'admin.slideshow.index', 'uses' => 'Admin\SlideShowController@list']);
@@ -149,33 +78,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('admin/slideshow/delete/{id}', ['as' => 'admin.slideshow.delete', 'uses' => 'Admin\SlideShowController@destroy']);
   /* end slideshow */
 
-  /* schedule */
-  Route::get('admin/schedule/index', ['as' => 'admin.schedule.index', 'uses' => 'Admin\ScheduleController@list']);
-  Route::get('admin/schedule/show/{id}', ['as' => 'admin.schedule.show', 'uses' => 'Admin\ScheduleController@show']);
-  Route::get('admin/schedule/create', ['as' => 'admin.schedule.create', 'uses' => 'Admin\ScheduleController@create']);
-  Route::post('admin/schedule/store', ['as' => 'admin.schedule.store', 'uses' => 'Admin\ScheduleController@store']);
-  Route::get('admin/schedule/edit/{id}', ['as' => 'admin.schedule.edit', 'uses' => 'Admin\ScheduleController@edit']);
-  Route::put('admin/schedule/update/{id}', ['as' => 'admin.schedule.update', 'uses' => 'Admin\ScheduleController@update']);
-  Route::get('admin/schedule/delete/{id}', ['as' => 'admin.schedule.delete', 'uses' => 'Admin\ScheduleController@destroy']);
-  /* end schedule */
 
-  /* HospitalDocuments */
-  Route::get('admin/informacoes-hospital/show', ['as' => 'admin.hospitalDocuments.show', 'uses' => 'Admin\HospitalDocumentController@show']);
-  Route::get('admin/informacoes-hospital/edit/{id}', ['as' => 'admin.hospitalDocuments.edit', 'uses' => 'Admin\HospitalDocumentController@edit']);
-  Route::put('admin/informacoes-hospital/update/{id}', ['as' => 'admin.hospitalDocuments.update', 'uses' => 'Admin\HospitalDocumentController@update']);
-  /* end HospitalDocuments */
-
-  /* hotelDocuments */
-  Route::get('admin/informacoes-hotel/show', ['as' => 'admin.hotelDocuments.show', 'uses' => 'Admin\HotelDocumentController@show']);
-  Route::get('admin/informacoes-hotel/edit/{id}', ['as' => 'admin.hotelDocuments.edit', 'uses' => 'Admin\HotelDocumentController@edit']);
-  Route::put('admin/informacoes-hotel/update/{id}', ['as' => 'admin.hotelDocuments.update', 'uses' => 'Admin\HotelDocumentController@update']);
-  /* end hotelDocuments */
-
-  /* hotelDocuments */
-  Route::get('admin/informacoes-restaurante/show', ['as' => 'admin.restaurantDocument.show', 'uses' => 'Admin\RestaurantDocumentController@show']);
-  Route::get('admin/informacoes-restaurante/edit/{id}', ['as' => 'admin.restaurantDocument.edit', 'uses' => 'Admin\RestaurantDocumentController@edit']);
-  Route::put('admin/informacoes-restaurante/update/{id}', ['as' => 'admin.restaurantDocument.update', 'uses' => 'Admin\RestaurantDocumentController@update']);
-  /* end hotelDocuments */
 
   /* configuration */
   Route::get('admin/configuration/show', ['as' => 'admin.configuration.show', 'uses' => 'Admin\ConfigurationController@show']);
@@ -193,16 +96,6 @@ Route::middleware(['auth'])->group(function () {
   Route::get('admin/faq/delete/{id}', ['as' => 'admin.faq.delete', 'uses' => 'Admin\FaqController@destroy']);
   /* end faq */
 
-    /* speaker */
-  Route::get('admin/speaker/index', ['as' => 'admin.speaker.index', 'uses' => 'Admin\SpeakerController@index']);
-  Route::get('admin/speaker/show/{id}', ['as' => 'admin.speaker.show', 'uses' => 'Admin\SpeakerController@show']);
-  Route::get('admin/speaker/create', ['as' => 'admin.speaker.create', 'uses' => 'Admin\SpeakerController@create']);
-  Route::post('admin/speaker/store', ['as' => 'admin.speaker.store', 'uses' => 'Admin\SpeakerController@store']);
-  Route::get('admin/speaker/edit/{id}', ['as' => 'admin.speaker.edit', 'uses' => 'Admin\SpeakerController@edit']);
-  Route::put('admin/speaker/update/{id}', ['as' => 'admin.speaker.update', 'uses' => 'Admin\SpeakerController@update']);
-  Route::get('admin/speaker/delete/{id}', ['as' => 'admin.speaker.delete', 'uses' => 'Admin\SpeakerController@destroy']);
-  Route::get('admin/speaker/list', ['as' => 'admin.speaker.list', 'uses' => 'Admin\SpeakerController@list']);
-/**End Speaker */
 
   /* doc */
   Route::get('admin/doc/index', ['as' => 'admin.doc.index', 'uses' => 'Admin\DocController@list']);
@@ -214,25 +107,6 @@ Route::middleware(['auth'])->group(function () {
   Route::get('admin/doc/delete/{id}', ['as' => 'admin.doc.delete', 'uses' => 'Admin\DocController@destroy']);
   /* end doc */
 
-  /* hotelList */
-  Route::get('admin/Lista-de-hoteis/index', ['as' => 'admin.hotelList.index', 'uses' => 'Admin\HotelListController@index']);
-  Route::get('admin/Lista-de-hoteis/show/{id}', ['as' => 'admin.hotelList.show', 'uses' => 'Admin\HotelListController@show']);
-  Route::get('admin/Lista-de-hoteis/create', ['as' => 'admin.hotelList.create', 'uses' => 'Admin\HotelListController@create']);
-  Route::post('admin/Lista-de-hoteis/store', ['as' => 'admin.hotelList.store', 'uses' => 'Admin\HotelListController@store']);
-  Route::get('admin/Lista-de-hoteis/edit/{id}', ['as' => 'admin.hotelList.edit', 'uses' => 'Admin\HotelListController@edit']);
-  Route::put('admin/Lista-de-hoteis/update/{id}', ['as' => 'admin.hotelList.update', 'uses' => 'Admin\HotelListController@update']);
-  Route::get('admin/Lista-de-hoteis/delete/{id}', ['as' => 'admin.hotelList.delete', 'uses' => 'Admin\HotelListController@destroy']);
-  /* end hotelList */
-
-  /* hotelList */
-  Route::get('admin/Lista-de-restaurantes/index', ['as' => 'admin.listRestaurants.index', 'uses' => 'Admin\ListRestaurantController@index']);
-  Route::get('admin/Lista-de-restaurantes/show/{id}', ['as' => 'admin.listRestaurants.show', 'uses' => 'Admin\ListRestaurantController@show']);
-  Route::get('admin/Lista-de-restaurantes/create', ['as' => 'admin.listRestaurants.create', 'uses' => 'Admin\ListRestaurantController@create']);
-  Route::post('admin/Lista-de-restaurantes/store', ['as' => 'admin.listRestaurants.store', 'uses' => 'Admin\ListRestaurantController@store']);
-  Route::get('admin/Lista-de-restaurantes/edit/{id}', ['as' => 'admin.listRestaurants.edit', 'uses' => 'Admin\ListRestaurantController@edit']);
-  Route::put('admin/Lista-de-restaurantes/update/{id}', ['as' => 'admin.listRestaurants.update', 'uses' => 'Admin\ListRestaurantController@update']);
-  Route::get('admin/Lista-de-restaurantes/delete/{id}', ['as' => 'admin.listRestaurants.delete', 'uses' => 'Admin\ListRestaurantController@destroy']);
-  /* end hotelList */
 
   /* video */
   Route::get('admin/video/index', ['as' => 'admin.video.index', 'uses' => 'Admin\VideoController@list']);
@@ -245,35 +119,7 @@ Route::middleware(['auth'])->group(function () {
   /* end video */
 
 
-  /* hospital */
-  Route::get('admin/hospital/index', ['as' => 'admin.hospital.index', 'uses' => 'Admin\HospitalController@index']);
-  Route::get('admin/hospital/show/{id}', ['as' => 'admin.hospital.show', 'uses' => 'Admin\HospitalController@show']);
-  Route::get('admin/hospital/create', ['as' => 'admin.hospital.create', 'uses' => 'Admin\HospitalController@create']);
-  Route::post('admin/hospital/store', ['as' => 'admin.hospital.store', 'uses' => 'Admin\HospitalController@store']);
-  Route::get('admin/hospital/edit/{id}', ['as' => 'admin.hospital.edit', 'uses' => 'Admin\HospitalController@edit']);
-  Route::put('admin/hospital/update/{id}', ['as' => 'admin.hospital.update', 'uses' => 'Admin\HospitalController@update']);
-  Route::get('admin/hospital/delete/{id}', ['as' => 'admin.hospital.delete', 'uses' => 'Admin\HospitalController@destroy']);
-  /* end hospital */
 
-  /* imagehostelList */
-  Route::get('admin/imageGalleryHostital/create/{id}', ['as' => 'admin.imageGalleryHostital.create', 'uses' => 'Admin\ImageHopitalController@create']);
-  Route::post('admin/imageGalleryHostital/store/{id}', ['as' => 'admin.imageGalleryHostital.store', 'uses' => 'Admin\ImageHopitalController@store']);
-  Route::get('admin/imageGalleryHostital/delete/{id}', ['as' => 'admin.imageGalleryHostital.delete', 'uses' => 'Admin\ImageHopitalController@destroy']);
-  /* End imagehostelList */
-
-
-  /* imagehostelList */
-  Route::get('admin/imageGalleryRestaraunt/create/{id}', ['as' => 'admin.imageGalleryRestaraunt.create', 'uses' => 'Admin\ImageRestaurantController@create']);
-  Route::post('admin/imageGalleryRestaraunt/store/{id}', ['as' => 'admin.imageGalleryRestaraunt.store', 'uses' => 'Admin\ImageRestaurantController@store']);
-  Route::get('admin/imageGalleryRestaraunt/delete/{id}', ['as' => 'admin.imageGalleryRestaraunt.delete', 'uses' => 'Admin\ImageRestaurantController@destroy']);
-  /* End imagehostelList */
-
-
-  /* imagehostelList */
-  Route::get('admin/imageGalleryHotel/create/{id}', ['as' => 'admin.imagehostelList.create', 'uses' => 'Admin\ImageHotelController@create']);
-  Route::post('admin/imageGalleryHotel/store/{id}', ['as' => 'admin.imagehostelList.store', 'uses' => 'Admin\ImageHotelController@store']);
-  Route::get('admin/imageGalleryHotel/delete/{id}', ['as' => 'admin.imagehostelList.delete', 'uses' => 'Admin\ImageHotelController@destroy']);
-  /* End imagehostelList */
 
   /* news */
   Route::get('admin/news/index', ['as' => 'admin.news.index', 'uses' => 'Admin\NewsController@list']);
@@ -294,5 +140,19 @@ Route::middleware(['auth'])->group(function () {
   Route::put('admin/publicacoes/update/{id}', ['as' => 'admin.publication.update', 'uses' => 'Admin\PublicationController@update']);
   Route::get('admin/publicacoes/delete/{id}', ['as' => 'admin.publication.delete', 'uses' => 'Admin\PublicationController@destroy']);
   /* end publication */
+
+
+  
+    /* project */
+  Route::get('admin/projecto/index', ['as' => 'admin.project.index', 'uses' => 'Admin\ProjectController@list']);
+  Route::get('admin/projecto/show/{id}', ['as' => 'admin.project.show', 'uses' => 'Admin\ProjectController@show']);
+  Route::get('admin/projecto/create', ['as' => 'admin.project.create', 'uses' => 'Admin\ProjectController@create']);
+  Route::post('admin/projecto/store', ['as' => 'admin.project.store', 'uses' => 'Admin\ProjectController@store']);
+  Route::get('admin/projecto/edit/{id}', ['as' => 'admin.project.edit', 'uses' => 'Admin\ProjectController@edit']);
+  Route::put('admin/projecto/update/{id}', ['as' => 'admin.project.update', 'uses' => 'Admin\ProjectController@update']);
+  Route::get('admin/projecto/delete/{id}', ['as' => 'admin.project.delete', 'uses' => 'Admin\ProjectController@destroy']);
+  /* end project */
+
+  });
 
 });
