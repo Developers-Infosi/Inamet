@@ -79,7 +79,6 @@ Route::middleware(['auth'])->group(function () {
   /* end slideshow */
 
 
-
   /* configuration */
   Route::get('admin/configuration/show', ['as' => 'admin.configuration.show', 'uses' => 'Admin\ConfigurationController@show']);
   Route::get('admin/configuration/edit/{id}', ['as' => 'admin.configuration.edit', 'uses' => 'Admin\ConfigurationController@edit']);
@@ -117,7 +116,6 @@ Route::middleware(['auth'])->group(function () {
   Route::put('admin/video/update/{id}', ['as' => 'admin.video.update', 'uses' => 'Admin\VideoController@update']);
   Route::get('admin/video/delete/{id}', ['as' => 'admin.video.delete', 'uses' => 'Admin\VideoController@destroy']);
   /* end video */
-
 
 
 
