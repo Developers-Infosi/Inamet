@@ -33,7 +33,7 @@
 }
 
 .text-primary {
-    color: #036ba1;
+    color: #0042b1;
 }
 
 .font-size-25 {
@@ -48,6 +48,7 @@
 @media (max-width: 768px) {
     #contentTopFooter {
         flex-direction: column;
+           padding: 1rem;
 
         .col {
             width: 100%;
@@ -61,24 +62,36 @@
     display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
-    padding: 2.5rem;
-    gap: 3rem;
+    margin-block: 1rem;
+ 
+  
+  
 
     .col {
-        flex: 1 1 12.5rem;
+        flex: 1 1 13rem;
+    }
+
+
+    #textAbout{
+        color: #fff;
+   
+        
     }
 
     div {
         #logoWhite{
-            width: 100%;
-         
+            width: 60%;
+            max-width: 100%;
+        
             filter: brightness(0) invert(1);
         }
-        p {
+        #textInfo{
             color: #fff;
             margin-top: 2rem;
-            line-height: 1.8;
-            text-align: justify;
+            line-height: 1.2;
+            text-align: left;
+            max-width: 300px;
+            
         }
         margin-top: 2rem;
 
@@ -113,7 +126,8 @@
             }
 
             li {
-                margin-bottom: 1rem;
+                margin-top:.3rem;
+             
             }
         }
     }
@@ -149,7 +163,7 @@
     display: flex;
     border-radius: .5rem;
     align-items: center;
-    border: 1px dashed #036ba1;
+    border: 1px dashed #0042b1;
 
      #Biograph p{
         font-weight: 400;
@@ -173,7 +187,7 @@
 
         small{
             display: block;
-            color:#036ba1;
+            color:#0042b1;
             font-weight: 700;
             margin-top: .5rem;
         }
@@ -198,7 +212,7 @@
 
         img{
             border-radius: .5rem;
-             border: 1px dotted #036ba1;
+             border: 1px dotted #0042b1;
              padding: .5rem;
              width: 40%;
              max-width: 100%;
@@ -232,7 +246,7 @@
 
 
         a{
-            color: #036ba1;
+            color: #0042b1;
             font-weight: 700;
             font-size: 14px;
             line-height: 1.4;
@@ -262,7 +276,7 @@
     }
 
     & p{
-        color: #036ba1;
+        color: #0042b1;
         text-transform: uppercase;
         font-weight: 700;
         margin-top: .5rem;
@@ -285,7 +299,7 @@
         p{
             padding: .5rem;
             font-size: 14px;
-            color: #036ba1;
+            color: #0042b1;
             font-weight: 700;
             text-transform: capitalize;
         }
@@ -331,13 +345,13 @@
             text-align: left;
             font-weight: 700;
             
-            color: #036ba1;
+            color: #0042b1;
 
             }
 
             a{
                 padding: .2rem;
-                color: #036ba1;
+                color: #0042b1;
                 display: flex;
                 align-items: center;
                 gap: 5px;
@@ -375,14 +389,14 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        border: 1px dotted #036ba1;
+        border: 1px dotted #0042b1;
         border-radius: .5rem;
         padding: 1rem;
 
 
         & div:nth-child(2) {
             h1{
-                color: #036ba1;
+                color: #0042b1;
                 font-weight: 700;
             }
             span{
@@ -412,7 +426,7 @@
 
     h3{
         font-size: 25px;
-        color: #036ba1;
+        color: #0042b1;
     }
 }
 
@@ -424,7 +438,7 @@
     gap: 30px;
     width: 650px;
     margin-top: 1rem;
-    border: 1px dotted #036ba1;
+    border: 1px dotted #0042b1;
     padding: .3rem;
     border-radius: .5rem;
 
@@ -432,11 +446,11 @@
     div:nth-child(1) {
         p {
             font-size: 14px;
-            color: #036ba1;
+            color: #0042b1;
         }
 
         span{
-            color: #036ba1;
+            color: #0042b1;
             margin-top: .5rem;
             display: block;
             font-weight: 700;
@@ -506,15 +520,15 @@
 }
 
 #pagination .page-link:hover{
-    background: #036ba1;
+    background: #0042b1;
     color: white;
     transform: translateY(-2px);
 }
 
 #pagination .active .page-link{
-    background: #036ba1;
+    background: #0042b1;
     color: white;
-    border-color: #036ba1;
+    border-color: #0042b1;
 }
 
 #pagination .disabled .page-link{
@@ -683,4 +697,31 @@
 
 .popup img{
     width:80px;
+}
+
+#map {
+
+       
+        width: 100%;
+        height: 70vh;
+        border-radius: 2rem;
+       
+    }
+
+
+
+
+.main-map{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    min-width: 100%;
+
+
+    #actualMap{
+        width: 30%;
+    }
+
+
+
 }

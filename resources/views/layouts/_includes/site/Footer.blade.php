@@ -1,49 +1,37 @@
  <footer id="footer" role="contentinfo">
-                    <section id="footer_top">
+  <section id="footer_top">
     <div class="container">
-
         <div id="contentTopFooter">
-
-
             <div class="col">
-                
                 <a href="{{ route("site.home") }}">
                     <img id="logoWhite" src="/assets/images/logo/logo.png" title="Logotipo do Inamet">
                 </a>
 
-            </div>
+                <div id="textInfo">
+                    O Instituto Nacional de Meteorologia e Geofísica (INAMET) 
+                    é um órgão público de Angola responsável por prover informações 
+                    meteorológicas através de monitoramento, análise e previsão do tempo e clima.
+                </div>
 
-        
+
+            </div>
 
   
        <div class="col">
-        <h1>Sobre o Inamet</h1>
+        <h1>Menus</h1>
         <ul>
-             <li><a href="{{  route("site.aboutInamet") }}">  Sobre o Inamet</a></li>
+             <li><a href="{{  route("site.aboutInamet") }}"> Sobre o Inamet</a></li>
               <li><a href="{{ route("site.principal") }}">  Director do Inamet</a></li>
-            <li><a href="{{ route("site.weatherForecast") }}">  Previsão Climática</a></li>
+            <li><a href="{{ route("site.weatherForecast") }}"> Previsão Climática</a></li>
             <li><a href="{{ route("site.monitoring") }}">  Monitoramento</a></li>
             <li><a href="{{ route("site.weather") }}">  Tempo</a></li>
             <li><a href="{{ route("site.weatherWarning") }}">  Avisos Metereológicos</a></li>
-            <li><a href="{{ route("site.satellite") }}">  Satélites</a></li>
              <li><a href="{{ route("site.seasonal") }}">  Previsão Sazonal</a></li>
-             <li><a href="{{ route("site.earthquake") }}">  Sismos</a></li>
-             <li><a href="{{ route("site.waves") }}">  Ondas</a></li>
+         
         </ul>
        </div>
 
 
-        <div class="col">
-        <h1>Informações</h1>
-        <ul>
-             <li><a href="{{ route("site.publication") }}">  Publicações</a></li>
-              <li><a href="{{ route("site.news") }}">  Notícias</a></li>
-            <li><a href="{{ route("site.project") }}">  Projectos</a></li>
-            <li><a href="{{ route("site.gallery") }}">  Galeria</a></li>
-            <li><a href="{{ route("site.videos") }}">  Video</a></li>
-            <li><a href="{{ route("site.contact") }}">  Contacto</a></li>
-        </ul>
-       </div>
 
 
          <div class="col">
@@ -114,273 +102,422 @@
 
 <script>
 
-const API_KEY = "0aea1068522467a30c4dbdc8912bf133";
 
-
-
-// =========================
-// MAPA
-// =========================
-
-const map = L.map('map').setView([-11.2027, 17.8739], 6);
-
-
-
-// =========================
-// MAPA BASE
-// =========================
-
-L.tileLayer(
-'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-{
-    attribution:'© OpenStreetMap'
-}
-).addTo(map);
-
-
-
-// =========================
-// CAMADAS
-// =========================
-
-const chuva = L.tileLayer(
-`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${API_KEY}`,
-{
-    opacity:0.6
-}
-);
-
-const nuvens = L.tileLayer(
-`https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=${API_KEY}`,
-{
-    opacity:0.6
-}
-);
-
-const temperatura = L.tileLayer(
-`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${API_KEY}`,
-{
-    opacity:0.6
-}
-);
-
-const vento = L.tileLayer(
-`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${API_KEY}`,
-{
-    opacity:0.6
-}
-);
-
-chuva.addTo(map);
-
-L.control.layers(null, {
-    "🌧 Chuva": chuva,
-    "☁️ Nuvens": nuvens,
-    "🌡 Temperatura": temperatura,
-    "💨 Vento": vento
-}).addTo(map);
-
-
-
-// =========================
-// 21 PROVÍNCIAS
-// =========================
-
-const provincias = [
-
-{ nome:"Luanda", lat:-8.8383, lon:13.2344 },
-
-{ nome:"Bengo", lat:-9.1042, lon:13.7289 },
-
-{ nome:"Benguela", lat:-12.5783, lon:13.4072 },
-
-{ nome:"Bié", lat:-12.3833, lon:16.9333 },
-
-{ nome:"Cabinda", lat:-5.55, lon:12.2 },
-
-{ nome:"Cuando Cubango", lat:-16.4181, lon:18.8076 },
-
-{ nome:"Cuanza Norte", lat:-9.2978, lon:14.9116 },
-
-{ nome:"Cuanza Sul", lat:-10.6802, lon:14.3748 },
-
-{ nome:"Cunene", lat:-17.4667, lon:16.3333 },
-
-{ nome:"Huambo", lat:-12.7761, lon:15.7392 },
-
-{ nome:"Huíla", lat:-14.9177, lon:13.4925 },
-
-{ nome:"Luanda Norte", lat:-8.4856, lon:15.8267 },
-
-{ nome:"Luanda Sul", lat:-10.2861, lon:20.7122 },
-
-{ nome:"Lunda Norte", lat:-7.4167, lon:20.8167 },
-
-{ nome:"Lunda Sul", lat:-10.7167, lon:22.2333 },
-
-{ nome:"Malanje", lat:-9.5402, lon:16.3410 },
-
-{ nome:"Moxico", lat:-13.4333, lon:20.7333 },
-
-{ nome:"Namibe", lat:-15.1961, lon:12.1522 },
-
-{ nome:"Uíge", lat:-7.6087, lon:15.0613 },
-
-{ nome:"Zaire", lat:-6.5733, lon:13.1747 },
-
-{ nome:"Icolo e Bengo", lat:-9.2411, lon:13.7350 }
-
-];
-
-
-
-// =========================
-// LISTA LATERAL
-// =========================
-
-const weatherList = document.getElementById('weather-list');
-
-
-
-// =========================
-// CARREGAR PROVÍNCIAS
-// =========================
-
-provincias.forEach(async provincia => {
-
-    try{
-
-        const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${provincia.lat}&lon=${provincia.lon}&appid=${API_KEY}&units=metric&lang=pt`
-        );
-
-        const data = await response.json();
-
-        const icon = data.weather[0].icon;
-
-        // =========================
-        // MARCADOR
-        // =========================
-
-        const marker = L.marker([provincia.lat, provincia.lon])
-        .addTo(map)
-        .bindPopup(`
-
-            <div class="popup">
-
-                <h2>${provincia.nome}</h2>
-
-                <img src="https://openweathermap.org/img/wn/${icon}@2x.png">
-
-                <p>${data.weather[0].description}</p>
-
-                <hr>
-
-                <p>🌡 ${data.main.temp} °C</p>
-
-                <p>💨 ${data.wind.speed} m/s</p>
-
-                <p>💧 ${data.main.humidity}%</p>
-
-            </div>
-
-        `);
-
-        // =========================
-        // CARD LATERAL
-        // =========================
-
-        const card = document.createElement('div');
-
-        card.classList.add('weather-card');
-
-        card.innerHTML = `
-
-            <h2>${provincia.nome}</h2>
-
-            <p>${data.weather[0].description}</p>
-
-            <p>🌡 ${data.main.temp} °C</p>
-
-            <p>💧 ${data.main.humidity}%</p>
-
-        `;
-
-        // CLICAR NO CARD
-        card.addEventListener('click', () => {
-
-            map.setView([provincia.lat, provincia.lon], 8);
-
-            marker.openPopup();
-
-        });
-
-        weatherList.appendChild(card);
-
-    }
-    catch(error){
-
-        console.log(error);
-
-    }
-
+const map = new maplibregl.Map({
+    container: 'map',
+    style: 'https://tiles.openfreemap.org/styles/bright',
+    center: [17.87, -11.20], // Angola
+    zoom: 5
 });
 
+map.on('load', () => {
+
+    map.addSource('provincias', {
+        type: 'geojson',
+        data: {
+            type: 'FeatureCollection',
+            features: [
+
+            {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Bengo (Caxito)</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [13.6750, -8.5667]
+                    }
+                },
+
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Benguela</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [13.4055, -12.5761]
+                    }
+                },
+
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Bié</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [16.9333, -12.3833]
+                    }
+                },
+
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Cabinda</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [12.1920, -5.5560]
+                    }
+                },
+
+                 {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Cuando</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [21.1147, -15.7914]
+                    }
+                },
+
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Cubango</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [17.6810, -14.6556]
+                    }
+                },
+
+                
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Cuanza Norte (Ndalatando)</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [14.9113, -9.2972]
+                    }
+                },
 
 
-// =========================
-// CLICAR NO MAPA
-// =========================
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Cuanza Sul (Sumbe)</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [13.8381, -11.1925]
+                    }
+                },
 
-map.on('click', async function(e){
 
-    const lat = e.latlng.lat;
-    const lon = e.latlng.lng;
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Cunene (Ondjiva)</h3>
+                            <p>🌡️ Temperatura: 25°C</p>
+                            <p>☀️ Céu limpo</p>
+                        `,
+                        icon: 'beach'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [15.7000, -17.0667]
+                    }
+                },
 
-    try{
+                 {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Huambo</h3>
+                            <p>🌡️ Temperatura: 19°C</p>
+                            <p>🌧️ Possibilidade de chuva</p>
+                        `,
+                        icon: 'mountain'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [15.7392, -12.7769]
+                    }
+                },
 
-        const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=pt`
-        );
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Lubango (Lubango)</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [13.5000, -14.9177]
+                    }
+                } ,
 
-        const data = await response.json();
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Ícolo e Bengo</h3>
+                            <p>Capital de Angola</p>
+                            <p>🌡️ Temperatura: 27°C</p>
+                            <p>💨 Vento: 12 km/h</p>
+                        `,
+                        icon: 'harbor'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [13.7500, -9.1112]
+                    }
+                }
 
-        const icon = data.weather[0].icon;
+                ,
 
-        L.popup()
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Luanda</h3>
+                            <p>Capital de Angola</p>
+                            <p>🌡️ Temperatura: 27°C</p>
+                            <p>💨 Vento: 12 km/h</p>
+                        `,
+                        icon: 'harbor'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [13.2344, -8.8147]
+                    }
+                }
 
-        .setLatLng([lat, lon])
+                ,
 
-        .setContent(`
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Lunda Norte(Dundo)</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [20.8333, -7.3667]
+                    }
+                }
+                
+                ,
 
-            <div class="popup">
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Lunda Sul (Saurimo)</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [20.3916, -9.6608]
+                    }
+                }
 
-                <h2>${data.name || 'Localização'}</h2>
+                ,
 
-                <img src="https://openweathermap.org/img/wn/${icon}@2x.png">
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Malanje</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [16.3419, -9.5402]
+                    }
+                }
 
-                <p>${data.weather[0].description}</p>
+                ,
 
-                <hr>
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Moxico (Luena)</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [19.9167, -11.7833]
+                    }
+                }
 
-                <p>🌡 ${data.main.temp} °C</p>
+                ,
 
-                <p>💨 ${data.wind.speed} m/s</p>
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Moxico Leste (Cazombo)</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [22.8954, -11.8954]
+                    }
+                }
 
-                <p>💧 ${data.main.humidity}%</p>
+                ,
 
-            </div>
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Namibe</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [12.1522, -15.1961]
+                    }
+                }
 
-        `)
+                ,
 
-        .openOn(map);
+                    {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Uíge</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [15.0556, -7.6083]
+                    }
+                }, 
 
-    }
-    catch(error){
 
-        console.log(error);
+                {
+                    type: 'Feature',
+                    properties: {
+                        description: `
+                            <h3>Zaire</h3>
+                            <p>🌡️ Temperatura: 17°C</p>
+                            <p>🌫️ Frio matinal</p>
+                        `,
+                        icon: 'town-hall'
+                    },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [14.2450, -6.2678]
+                    }
+                } 
 
-    }
+             
+
+
+            ]
+        }
+    });
+
+    // Layer das províncias
+    map.addLayer({
+        id: 'provincias',
+        type: 'symbol',
+        source: 'provincias',
+
+        layout: {
+            'icon-image': 'marker',
+            'icon-size': 1.2,
+            'icon-allow-overlap': true
+        }
+    });
+
+    // Popup
+    map.on('click', 'provincias', (e) => {
+
+        const coordinates = e.features[0].geometry.coordinates.slice();
+
+        const description = e.features[0].properties.description;
+
+        new maplibregl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+
+    });
+
+    // Cursor pointer
+    map.on('mouseenter', 'provincias', () => {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'provincias', () => {
+        map.getCanvas().style.cursor = '';
+    });
 
 });
 

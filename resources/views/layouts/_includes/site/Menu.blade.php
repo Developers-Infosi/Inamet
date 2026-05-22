@@ -178,7 +178,7 @@
                                                 .miniature-date {
                                                     font-family: "Quicksand", sans-serif;
                                                     font-weight: bold;
-                                                    color: #145e9a;
+                                                    color: #0042b1;
 
                                                     margin: 0;
                                                     padding: 0;
@@ -356,7 +356,7 @@
 
                                         <li class="menu-icon-5 menu-item menu-item--expanded">
                                             <a
-                                                href="actualites-et-dossiers.html"
+                                                href="#"
                                                 class="fas fa-file"
                                              
                                                 >Informações</a
@@ -427,198 +427,7 @@
                             </div>
                         </div>
                     </section>
-                    <section id="header_bottom" class="bg-color">
-                        <div class="container">
-                            <div class="row">
-                                <div id="block-mfbarrefavoris" class="block block-mf-barre-favoris">
-                                    <div id="barre-favoris" v-cloak>
-                                        <ul id="barre-favoris-list">
-                                            <li v-for="(favori, index) in favoris.getFavoris()">
-                                                <p></p>
-                                                <a class="favori-link" :href="favori.getPoi().path">
-                                                    <span
-                                                        class="icon-type-favoris"
-                                                        :class="favori.getPoi().type"
-                                                    ></span>
-                                                    <i
-                                                        v-if="favori.getPoi().icon_poi"
-                                                        :aria-label="'Icone ' + favori.getPoi().name"
-                                                        v-bind:class="favori.getPoi().icon_poi"
-                                                    ></i>
-
-                                                    <p aria-label="Ville">
-                                                        <span
-                                                            >${favori.getPoi().name.slice(0, maxlength)}<span
-                                                                v-if="favori.getPoi().name.length >= maxlength"
-                                                                >...</span
-                                                            ></span
-                                                        >
-                                                        <span
-                                                            v-if="favori.getPoi().country != null && favori.getPoi().country != '' && favori.getPoi().country.substring(0, 2) != 'FR'"
-                                                            >(${favori.getPoi().country.substring(0, 2)})</span
-                                                        >
-                                                        <span
-                                                            v-if="favori.getPoi().country == null && favori.getPoi().dpt != null && favori.getPoi().dpt != ''"
-                                                            >(${favori.getPoi().dpt})</span
-                                                        >
-                                                    </p>
-
-                                                    <i
-                                                        v-if="favori.warningColor == 2"
-                                                        alt="VIGILANCE JAUNE"
-                                                        title="VIGILANCE JAUNE"
-                                                        aria-label="vigilance jaune"
-                                                        class="fa fa-exclamation-triangle vigilance jaune"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 3"
-                                                        alt="VIGILANCE ORANGE"
-                                                        title="VIGILANCE ORANGE"
-                                                        aria-label="vigilance orange"
-                                                        class="fa fa-exclamation-triangle vigilance orange"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 4"
-                                                        alt="VIGILANCE ROUGE"
-                                                        title="VIGILANCE ROUGE"
-                                                        aria-label="vigilance rouge"
-                                                        class="fa fa-exclamation-triangle vigilance rouge"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 5"
-                                                        alt="VIGILANCE VIOLETTE"
-                                                        title="VIGILANCE VIOLETTE"
-                                                        aria-label="vigilance violette"
-                                                        class="fa fa-exclamation-triangle vigilance violette"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 1.5"
-                                                        alt="VIGILANCE GRISE"
-                                                        title="VIGILANCE GRISE"
-                                                        aria-label="vigilance grise"
-                                                        class="fa fa-exclamation-triangle vigilance grise"
-                                                    ></i>
-
-                                                    <i
-                                                        v-if="favori.warningColor == 6"
-                                                        alt="VIGILANCE BLEU-GRIS CYCLONE"
-                                                        title="VIGILANCE BLEU-GRIS CYCLONE"
-                                                        aria-label="vigilance bleu-gris cyclone"
-                                                        class="fa fa-exclamation-triangle vigilance bleu-gris-cyclone"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 7 && favori.getPoi().dpt == '976'"
-                                                        alt="VIGILANCE BLANCHE CYCLONE"
-                                                        title="VIGILANCE BLANCHE CYCLONE"
-                                                        aria-label="vigilance blanche cyclone"
-                                                        class="fa fa-exclamation-triangle vigilance blanc-cyclone"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 7 && favori.getPoi().dpt != '976'"
-                                                        alt="VIGILANCE JAUNE CYCLONE"
-                                                        title="VIGILANCE JAUNE CYCLONE"
-                                                        aria-label="vigilance jaune cyclone"
-                                                        class="fa fa-exclamation-triangle vigilance jaune-cyclone"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 8"
-                                                        alt="VIGILANCE ORANGE CYCLONE"
-                                                        title="VIGILANCE ORANGE CYCLONE"
-                                                        aria-label="vigilance orange cyclone"
-                                                        class="fa fa-exclamation-triangle vigilance orange-cyclone"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 9"
-                                                        alt="VIGILANCE ROUGE CYCLONE"
-                                                        title="VIGILANCE ROUGE CYCLONE"
-                                                        aria-label="vigilance rouge cyclone"
-                                                        class="fa fa-exclamation-triangle vigilance rouge-cyclone"
-                                                    ></i>
-                                                    <i
-                                                        v-if="favori.warningColor == 10"
-                                                        alt="VIGILANCE VIOLETTE CYCLONE"
-                                                        title="VIGILANCE VIOLETTE CYCLONE"
-                                                        aria-label="vigilance violette cyclone"
-                                                        class="fa fa-exclamation-triangle vigilance violette-cyclone"
-                                                    ></i>
-
-                                                    <img
-                                                        v-if="favori.getForecastNow() != null && favori.getForecastNow().weather_icon != null"
-                                                        :src="'/modules/custom/mf_tools_common_theme_public/svg/weather/' + favori.getForecastNow().weather_icon + '.svg'"
-                                                        :alt="'METEO '+favori.getPoi().name"
-                                                        class="icon shape-weather"
-                                                        style="width: 35px"
-                                                        :title="'METEO '+favori.getPoi().name"
-                                                    />
-
-                                                    <strong
-                                                        v-if="favori.getForecastNow() != null && favori.getForecastNow().T != null"
-                                                        :aria-label="'Température à '+favori.getPoi().name"
-                                                        >${Math.round(favori.getForecastNow().T)}°</strong
-                                                    >
-                                                </a>
-                                                <div class="dot-menu" v-on:click="displayMenu(index)">
-                                                    <ul class="dot-menu-content" v-if="menuCurrentlyDisplayed == index">
-                                                        <li v-on:click="placeItemFirstPosition(index)">
-                                                            Placer à la 1<sup>ere</sup> place
-                                                        </li>
-                                                        <li v-on:click="removeItemFromFavoris(favori)">
-                                                            Effacer le favori
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="last">
-                                                <div id="add-favorite">
-                                                    <div class="autocomplete">
-                                                   
-                                                        <button
-                                                            class="close"
-                                                            aria-label="Fermer"
-                                                            title="Fermer"
-                                                            v-if="stateSearch == true"
-                                                            v-on:click="showSearch(false)"
-                                                        ></button>
-                                                        <div class="add-favorite-list" v-if="stateSearch">
-                                                            <input
-                                                                @blur="setFocus(false)"
-                                                                @focus="setFocus(true)"
-                                                                id="myInput"
-                                                                name="newPOI"
-                                                                placeholder="Ajouter une ville"
-                                                                type="text"
-                                                                v-model="inputPoi"
-                                                                autocomplete="off"
-                                                                v-on:input="searchTest()"
-                                                            />
-                                                            <ul
-                                                                class="favorite-items"
-                                                                v-if="inputPoi != '' && magic_flag"
-                                                            >
-                                                                <li
-                                                                    class="favorite-item"
-                                                                    v-for="(poi, index) in getPoisList()"
-                                                                    v-on:click="addFavoriteFromInput(poi)"
-                                                                >
-                                                                    ${poi.name.slice(0, 50)}
-                                                                </li>
-                                                                <li
-                                                                    class="favorite-item"
-                                                                    v-if="getPoisList().length == 0"
-                                                                >
-                                                                    Aucun résultat
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    
                 </header>
 
                 <aside aria-hidden="true" id="sidebar_page">

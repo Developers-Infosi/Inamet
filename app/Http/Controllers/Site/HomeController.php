@@ -22,7 +22,7 @@ class HomeController extends Controller
 
         $response['about'] = About::first();
         $response['news'] = News::where([['state', 'Autorizada']])->orderBy('id', 'desc')->limit(3)->get();
-        
+       
         
     
         return view('site.home.index', $response);
