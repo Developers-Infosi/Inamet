@@ -77,28 +77,6 @@
 
 
 
-  <div id="container" >
-
-   <div class="seasonal-prevision">
-
-    <div class="seasonal-header">
-        <h3>Previsão Sazonal</h3>
-
-        <select id="seasonalType">
-            <option value="temperature">Temperatura</option>
-            <option value="rain">Precipitação</option>
-            <option value="humidity">Humidade</option>
-            <option value="wind">Vento</option>
-        </select>
-    </div>
-
-    <canvas id="seasonalChart"></canvas>
-
-</div>
-
-  </div>
-
-
 
  
 
