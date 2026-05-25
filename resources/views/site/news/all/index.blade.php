@@ -33,7 +33,7 @@
       <div id="textItem">
         <a href="{{ url("/noticia/".urlencode($new->title)) }}">
        
-          {!! html_entity_decode(mb_substr($new->body, 0, 100, "UTF-8")) !!}...
+          {{ $new->title }}
         </a>
 
         <a href="{{ url("/noticia/".urlencode($new->title)) }}">   Ler Mais</a>
