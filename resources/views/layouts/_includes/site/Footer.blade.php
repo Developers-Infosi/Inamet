@@ -102,425 +102,140 @@
 
 <script>
 
+const provincias = [
+    { nome: "Bengo", lat: -8.5667, lon: 13.6750 },
+    { nome: "Benguela", lat: -12.5761, lon: 13.4055 },
+    { nome: "Bié", lat: -12.3833, lon: 16.9333 },
+    { nome: "Cabinda", lat: -5.5560, lon: 12.1920 },
+    { nome: "Cuando", lat: -15.7914, lon: 21.1147 },
+    { nome: "Cubango", lat: -14.6556, lon: 17.6810 },
+    { nome: "Cuanza Norte", lat: -9.2972, lon: 14.9113 },
+    { nome: "Cuanza Sul", lat: -11.1925, lon: 13.8381 },
+    { nome: "Cunene", lat: -17.0667, lon: 15.7000 },
+    { nome: "Huambo", lat: -12.7769, lon: 15.7392 },
+    { nome: "Huíla", lat: -14.9177, lon: 13.5000 },
+    { nome: "Ícolo e Bengo", lat: -9.1112, lon: 13.7500 },
+    { nome: "Luanda", lat: -8.8147, lon: 13.2344 },
+    { nome: "Lunda Norte", lat: -7.3667, lon: 20.8333 },
+    { nome: "Lunda Sul", lat: -9.6608, lon: 20.3916 },
+    { nome: "Malanje", lat: -9.5402, lon: 16.3419 },
+    { nome: "Moxico", lat: -11.7833, lon: 19.9167 },
+    { nome: "Moxico Leste", lat: -11.8954, lon: 22.8954 },
+    { nome: "Namibe", lat: -15.1961, lon: 12.1522 },
+    { nome: "Uíge", lat: -7.6083, lon: 15.0556 },
+    { nome: "Zaire", lat: -6.2678, lon: 14.2450 }
+];
 
 const map = new maplibregl.Map({
     container: 'map',
     style: 'https://tiles.openfreemap.org/styles/bright',
-    center: [17.87, -11.20], // Angola
+    center: [17.87, -11.20],
     zoom: 5
 });
 
+function getWeatherIcon(code) {
+
+    if (code === 0) return "☀️ Céu limpo";
+
+    if (code >= 1 && code <= 3) return "⛅ Parcialmente nublado";
+
+    if (code >= 45 && code <= 48) return "🌫️ Nevoeiro";
+
+    if (code >= 51 && code <= 67) return "🌧️ Chuva";
+
+    if (code >= 71 && code <= 77) return "❄️ Neve";
+
+    if (code >= 80 && code <= 82) return "🌦️ Pancadas de chuva";
+
+    if (code >= 95) return "⛈️ Tempestade";
+
+    return "☁️ Nublado";
+}
+
+async function carregarClima() {
+
+    for (const provincia of provincias) {
+
+        try {
+
+            const url =
+                `https://api.open-meteo.com/v1/forecast?latitude=${provincia.lat}&longitude=${provincia.lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto`;
+
+            const response = await fetch(url);
+
+            const data = await response.json();
+
+            const clima = data.current;
+
+            const descricaoClima = getWeatherIcon(clima.weather_code);
+
+            const popup = `
+                <div style="font-family: Arial; min-width: 220px;">
+
+                    <h3 style="margin-bottom:10px;">
+                        ${provincia.nome}
+                    </h3>
+
+                    <p>
+                        🌡️ Temperatura:
+                        <strong>${clima.temperature_2m}°C</strong>
+                    </p>
+
+                    <p>
+                        💧 Humidade:
+                        <strong>${clima.relative_humidity_2m}%</strong>
+                    </p>
+
+                    <p>
+                        💨 Vento:
+                        <strong>${clima.wind_speed_10m} km/h</strong>
+                    </p>
+
+                    <p>
+                        ${descricaoClima}
+                    </p>
+
+                </div>
+            `;
+
+            new maplibregl.Marker({
+                color: '#2563eb'
+            })
+                .setLngLat([provincia.lon, provincia.lat])
+                .setPopup(
+                    new maplibregl.Popup({
+                        offset: 25
+                    }).setHTML(popup)
+                )
+                .addTo(map);
+
+        } catch (erro) {
+
+            console.error(
+                `Erro ao carregar clima de ${provincia.nome}`,
+                erro
+            );
+
+        }
+
+    }
+
+}
+
 map.on('load', () => {
 
-    map.addSource('provincias', {
-        type: 'geojson',
-        data: {
-            type: 'FeatureCollection',
-            features: [
-
-            {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Bengo (Caxito)</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [13.6750, -8.5667]
-                    }
-                },
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Benguela</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [13.4055, -12.5761]
-                    }
-                },
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Bié</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [16.9333, -12.3833]
-                    }
-                },
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Cabinda</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [12.1920, -5.5560]
-                    }
-                },
-
-                 {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Cuando</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [21.1147, -15.7914]
-                    }
-                },
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Cubango</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [17.6810, -14.6556]
-                    }
-                },
-
-                
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Cuanza Norte (Ndalatando)</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [14.9113, -9.2972]
-                    }
-                },
-
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Cuanza Sul (Sumbe)</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [13.8381, -11.1925]
-                    }
-                },
-
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Cunene (Ondjiva)</h3>
-                            <p>🌡️ Temperatura: 25°C</p>
-                            <p>☀️ Céu limpo</p>
-                        `,
-                        icon: 'beach'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [15.7000, -17.0667]
-                    }
-                },
-
-                 {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Huambo</h3>
-                            <p>🌡️ Temperatura: 19°C</p>
-                            <p>🌧️ Possibilidade de chuva</p>
-                        `,
-                        icon: 'mountain'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [15.7392, -12.7769]
-                    }
-                },
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Lubango (Lubango)</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [13.5000, -14.9177]
-                    }
-                } ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Ícolo e Bengo</h3>
-                            <p>Capital de Angola</p>
-                            <p>🌡️ Temperatura: 27°C</p>
-                            <p>💨 Vento: 12 km/h</p>
-                        `,
-                        icon: 'harbor'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [13.7500, -9.1112]
-                    }
-                }
-
-                ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Luanda</h3>
-                            <p>Capital de Angola</p>
-                            <p>🌡️ Temperatura: 27°C</p>
-                            <p>💨 Vento: 12 km/h</p>
-                        `,
-                        icon: 'harbor'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [13.2344, -8.8147]
-                    }
-                }
-
-                ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Lunda Norte(Dundo)</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [20.8333, -7.3667]
-                    }
-                }
-                
-                ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Lunda Sul (Saurimo)</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [20.3916, -9.6608]
-                    }
-                }
-
-                ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Malanje</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [16.3419, -9.5402]
-                    }
-                }
-
-                ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Moxico (Luena)</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [19.9167, -11.7833]
-                    }
-                }
-
-                ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Moxico Leste (Cazombo)</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [22.8954, -11.8954]
-                    }
-                }
-
-                ,
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Namibe</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [12.1522, -15.1961]
-                    }
-                }
-
-                ,
-
-                    {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Uíge</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [15.0556, -7.6083]
-                    }
-                }, 
-
-
-                {
-                    type: 'Feature',
-                    properties: {
-                        description: `
-                            <h3>Zaire</h3>
-                            <p>🌡️ Temperatura: 17°C</p>
-                            <p>🌫️ Frio matinal</p>
-                        `,
-                        icon: 'town-hall'
-                    },
-                    geometry: {
-                        type: 'Point',
-                        coordinates: [14.2450, -6.2678]
-                    }
-                } 
-
-             
-
-
-            ]
-        }
-    });
-
-    // Layer das províncias
-    map.addLayer({
-        id: 'provincias',
-        type: 'symbol',
-        source: 'provincias',
-
-        layout: {
-            'icon-image': 'marker',
-            'icon-size': 1.2,
-            'icon-allow-overlap': true
-        }
-    });
-
-    // Popup
-    map.on('click', 'provincias', (e) => {
-
-        const coordinates = e.features[0].geometry.coordinates.slice();
-
-        const description = e.features[0].properties.description;
-
-        new maplibregl.Popup()
-            .setLngLat(coordinates)
-            .setHTML(description)
-            .addTo(map);
-
-    });
-
-    // Cursor pointer
-    map.on('mouseenter', 'provincias', () => {
-        map.getCanvas().style.cursor = 'pointer';
-    });
-
-    map.on('mouseleave', 'provincias', () => {
-        map.getCanvas().style.cursor = '';
-    });
+    carregarClima();
 
 });
 
+</script>
+
+<script>
+    /* MAPLIBRE FIX MOBILE RESIZE */
+
+window.addEventListener('resize', () => {
+    map.resize();
+});
 </script>
 
     </body>

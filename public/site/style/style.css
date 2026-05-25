@@ -645,9 +645,9 @@
 #container{
     display:flex;
     width: 100%;
-    max-width:100%;
-    height:100vh;
-    padding: 4rem;
+   
+    padding-block: 3rem;
+    padding-inline: 3rem;
     border-radius: .5rem;
 }
 
@@ -708,20 +708,228 @@
        
     }
 
-
-
+/* =========================
+   MAIN LAYOUT
+========================= */
 
 .main-map{
     display: flex;
+    gap: 2rem;
+    width: 100%;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   WEATHER SIDEBAR
+========================= */
+
+.main-map #actualMap{
+    width: 32%;
+    min-width: 320px;
+    min-height: 70vh;
+
+    background: #fff;
+
+    border-radius: .7rem;
+    border-top: 2px solid #0042b1;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+
+    overflow: hidden;
+}
+
+.main-map #actualMap h3{
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.main-map #actualMap input{
+    width: 90%;
+    display: block;
+    margin-inline: auto;
+
+    padding: 1rem;
+
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+
+    transition: .3s ease;
+}
+
+.main-map #actualMap input:hover{
+    border-color: #0042b1;
+}
+
+.main-map #actualMap input:focus{
+    outline: .1rem solid #0042b1;
+}
+
+
+/* =========================
+   WEATHER INFO
+========================= */
+
+#insideCardActualMap span{
+    display: block;
+    margin-block: 1rem;
+    font-size: 15px;
+    text-align: center;
+}
+
+#weatherTemperature{
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+#weatherTemperature h4{
+    text-transform: uppercase;
+    color: #0042b1;
+    margin-bottom: 1rem;
+}
+
+#weatherTemperature img{
+    width: 90px;
+    max-width: 100%;
+}
+
+#temperatures,
+#humidity{
+    display: flex;
     align-items: center;
-    gap: 4rem;
-    min-width: 100%;
+    justify-content: center;
+    gap: .5rem;
+
+    margin-top: 1rem;
+}
+
+#temperatures span,
+#humidity span{
+    font-weight: 700;
+}
+
+#temperatures span img{
+    width: 18px;
+}
 
 
-    #actualMap{
-        width: 30%;
+/* =========================
+   MAP CONTAINER
+========================= */
+
+.seasonal-prevision{
+    flex: 1;
+    min-width: 320px;
+    min-height: 70vh;
+
+    background: #fff;
+
+    border-radius: .7rem;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+
+    overflow: hidden;
+}
+
+
+/* MAPLIBRE / LEAFLET MAP */
+
+#map{
+    width: 100%;
+    height: 100%;
+    min-height: 70vh;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1024px){
+
+    .main-map{
+        gap: 1.5rem;
     }
 
+    .main-map #actualMap{
+        width: 100%;
+        min-height: auto;
+    }
+
+    .seasonal-prevision{
+        width: 100%;
+    }
+
+    #map{
+        min-height: 60vh;
+    }
+}
 
 
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+    .main-map{
+        flex-direction: column;
+    }
+
+    .main-map #actualMap{
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .seasonal-prevision{
+        width: 100%;
+        min-width: 100%;
+    }
+
+    #weatherTemperature{
+        padding: 1.5rem 1rem;
+    }
+
+    #map{
+        min-height: 55vh;
+    }
+
+    #temperatures,
+    #humidity{
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================
+   SMALL DEVICES
+========================= */
+
+@media (max-width: 480px){
+
+    .main-map{
+        gap: 1rem;
+    }
+
+    .main-map #actualMap input{
+        width: 95%;
+        padding: .9rem;
+    }
+
+    #insideCardActualMap span{
+        
+        font-size: 14px;
+    }
+
+    #weatherTemperature h4{
+        font-size: .95rem;
+    }
+
+    #map{
+        min-height: 50vh;
+    }
 }
